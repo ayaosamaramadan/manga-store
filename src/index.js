@@ -2,7 +2,8 @@ let email = document.getElementById('email');
 let password = document.getElementById('password');
 
 document.getElementById('loginform').addEventListener('submit', function (event) {
-    const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+   let upperCase = /[A-Z]/;
 
     if (email.value === '' && password.value !== '') {
         event.preventDefault();
@@ -18,10 +19,14 @@ document.getElementById('loginform').addEventListener('submit', function (event)
 
  else if (!emailPattern.test(email.value)) {
     event.preventDefault();
-    notific('Please enter a valid email address.');
+    notific("Please enter a valid email address. Example: user@example.com");
 } else if (password.value.length < 8) {
     event.preventDefault();
-    notific('Password must be at least 8 characters long.');
+    notific('Password must be at least 8 characters');
+}
+else if (!upperCase.test(password.value)) {
+    event.preventDefault();
+    notific('Password must contain at least one UpperCase letter');
 }
     
 
@@ -43,7 +48,7 @@ const notific = (massage) => {
         setTimeout(() => {
             notif.remove();
         }, 300);
-    }, 2000);
+    }, 6000);
 };
 
 

@@ -554,6 +554,10 @@ video {
   display: none;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .custome-imge {
   background-image: url(../images/a.jpg);
   background-repeat: no-repeat;

@@ -644,45 +644,57 @@ transform: scale(0.99);
 }
 
 .notif {
-  background-color: rgba(255, 255, 255, 0.404);
-  color: #474545;
+  background: var(--gold);
+  color: #3d2a2a;
   padding: 10px;
   padding-right: 20px;
   padding-left: 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgb(100, 105, 52);
   font-size: 1rem;
-  top: 0;
-
-  margin-top: 20px;
+  top: 88%;
+  left: 20;
+border-left: 5px solid #ff0000;
   position: absolute;
   display: fixed;
   text-align: center;
+  
 }
 
 .notif {
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
+  animation-duration: 1s;
+ 
 }
 
 .notif.show {
   animation-name: slideIn;
+ 
 }
 
-.notif.hide {
-  animation-name: slideOut;
-}
+
 
 .notif p {
   margin: 0;
 }
 
 .err {
-  background-color: #f4433696;
+  background-color: #ec2f21;
   color: white;
   padding: 7px;
   padding-right: 10px;
   padding-left: 10px;
-  border-radius: 45px;
+  border-radius: 10px;
   margin-right: 10px;
 }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
