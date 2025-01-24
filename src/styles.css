@@ -582,7 +582,7 @@ video {
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  border: 3px solid rgb(230, 191, 120);
+  border: 2px solid rgb(230, 191, 120);
  padding: 10px;
   width: 400px;
   height: 550px;
@@ -598,8 +598,21 @@ input{
   padding: 10px;
   margin: 10px 0;
   border-radius: 4px;
-  border: 2px solid wheat;
+  border: 1px solid wheat;
   background-color: transparent;
+  color: wheat;
+  margin-top: -8.5%;
+  padding-left: 13%;
+}
+
+input::placeholder {
+  color: wheat; 
+
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #101a30 inset !important;
+  -webkit-text-fill-color: wheat !important; 
 }
 
 .login-btn{
@@ -610,7 +623,7 @@ input{
   border-radius: 5px;
   background: var(--gold);
   font-weight: bold;
-  color: rgb(70, 70, 70);
+  color: rgb(23, 31, 53);
 }
 
 .login-btn:hover{
@@ -622,4 +635,10 @@ transform: scale(0.99);
   color: wheat;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.fas{
+  color: rgb(191, 192, 185);
+  margin-left: 15px;
+  margin-top: 10%;
 }
