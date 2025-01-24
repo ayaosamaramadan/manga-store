@@ -1,7 +1,10 @@
-let email = document.getElementById('email');
-let password = document.getElementById('password');
+
 
 document.getElementById('loginform').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     let upperCase = /[A-Z]/;
 
@@ -31,12 +34,12 @@ document.getElementById('loginform').addEventListener('submit', function (event)
     {
     const userKey = `user_${email.value}`;
     localStorage.setItem(userKey, JSON.stringify({ email: email.value, password: password.value }));
-
-    }
-    // console.log('nav to home.html');
-//   event.preventDefault();
-//   window.location.href = './home.html';
+ console.log('nav to home.html');
+    event.preventDefault();
+  window.location.href = "../home.html";
       
+    }
+   
 });
 
 
