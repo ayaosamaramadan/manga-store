@@ -3,7 +3,7 @@ let password = document.getElementById('password');
 
 document.getElementById('loginform').addEventListener('submit', function (event) {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-   let upperCase = /[A-Z]/;
+    let upperCase = /[A-Z]/;
 
     if (email.value === '' && password.value !== '') {
         event.preventDefault();
@@ -14,22 +14,29 @@ document.getElementById('loginform').addEventListener('submit', function (event)
     } else if (email.value === '' && password.value === '') {
         event.preventDefault();
         notific('Email & Password Is Required');
-    
+
     }
+    else if (!emailPattern.test(email.value)) {
+        event.preventDefault();
+        notific("Please enter a valid email address. Example: user@example.com");
+    } else if (password.value.length < 8) {
+        event.preventDefault();
+        notific('Password must be at least 8 characters');
+    }
+    else if (!upperCase.test(password.value)) {
+        event.preventDefault();
+        notific('Password must contain at least one UpperCase letter');
+    }
+    else 
+    {
+    const userKey = `user_${email.value}`;
+    localStorage.setItem(userKey, JSON.stringify({ email: email.value, password: password.value }));
 
- else if (!emailPattern.test(email.value)) {
-    event.preventDefault();
-    notific("Please enter a valid email address. Example: user@example.com");
-} else if (password.value.length < 8) {
-    event.preventDefault();
-    notific('Password must be at least 8 characters');
-}
-else if (!upperCase.test(password.value)) {
-    event.preventDefault();
-    notific('Password must contain at least one UpperCase letter');
-}
-    
-
+    }
+    // console.log('nav to home.html');
+//   event.preventDefault();
+//   window.location.href = './home.html';
+      
 });
 
 
