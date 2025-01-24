@@ -147,7 +147,7 @@ html,
 :host {
   line-height: 1.5;
   /* 1 */
-  -webkit-text-size-adjust: 100%;
+
   /* 2 */
   -moz-tab-size: 4;
   /* 3 */
@@ -567,11 +567,59 @@ video {
   font-weight: 700;
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-}
-
 .underline {
   text-decoration-line: underline;
+}
+
+.custome-imge {
+  background-image: url(../images/a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logincontainer {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid rgb(230, 191, 120);
+ padding: 10px;
+  width: 400px;
+  height: 550px;
+  border-radius: 10px;
+ }
+
+ :root {
+  --gold: linear-gradient(90deg, rgba(135,109,11,1) 0%, rgba(255,234,156,0.927608543417367) 48%, rgba(217,173,13,1) 100%);
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 2px solid wheat;
+  background-color: transparent;
+}
+
+.login-btn{
+  background: var(--gold);
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: var(--gold);
+  font-weight: bold;
+  color: rgb(70, 70, 70);
+}
+
+.login-btn:hover{
+transform: scale(0.99);
+}
+
+.login-header{
+  text-align: left;
+  color: wheat;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
