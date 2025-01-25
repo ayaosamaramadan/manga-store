@@ -548,6 +548,10 @@ video {
   height: auto;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
 [hidden]:where(:not([hidden="until-found"])) {
@@ -556,6 +560,14 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-wheat {
+  color: wheat;
+}
+.font-bold{
+  font-weight: bold;
+
 }
 
 .text-3xl {
