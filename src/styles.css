@@ -562,9 +562,10 @@ video {
   text-align: center;
 }
 
-.text-wheat {
+.text-wheat , .fa-solid{
   color: wheat;
 }
+
 .font-bold{
   font-weight: bold;
 
@@ -724,6 +725,7 @@ overflow: hidden;
     height: 70%;
   }
  
+ 
 }
 
 @media (max-width: 425px){
@@ -732,4 +734,31 @@ overflow: hidden;
     margin-top: -31.8px;
 
   }
+
+
+ 
+}
+
+
+@media (max-width: 524px){
+.fa-cart-plus{
+
+  margin-top: -23px;
+}
+
+ 
+}
+
+
+.fa-cart-plus{
+  margin-left: 85%;
+
+  font-size: 1.5rem;
+
+}
+
+.fa-bars{
+  margin-left: 5%;
+  font-size: 1.5rem; 
+ margin-top: 30px;
 }

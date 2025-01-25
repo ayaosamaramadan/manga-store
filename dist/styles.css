@@ -147,12 +147,11 @@ html,
 :host {
   line-height: 1.5;
   /* 1 */
-  
   /* 2 */
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -197,7 +196,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -548,14 +547,39 @@ video {
   height: auto;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
-.lowercase {
-  text-transform: lowercase;
+.text-center {
+  text-align: center;
+}
+
+.text-wheat , .fa-solid{
+  color: wheat;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .custome-imge {
@@ -564,6 +588,156 @@ video {
   background-size: cover;
 }
 
+.logincontainer {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid rgb(230, 191, 120);
+  padding: 10px;
+  width: 400px;
+  height: 550px;
+  border-radius: 10px;
+  height: 70%;
+}
+
 :root {
   --gold: linear-gradient(90deg, rgba(135,109,11,1) 0%, rgba(255,234,156,0.927608543417367) 48%, rgba(217,173,13,1) 100%);
+}
+
+input{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid wheat;
+  background-color: transparent;
+  color: wheat;
+  margin-top: -8.5%;
+  padding-left: 13%;
+}
+
+input::-moz-placeholder {
+  color: wheat;
+}
+
+input::placeholder {
+  color: wheat;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #101a30 inset !important;
+  -webkit-text-fill-color: wheat !important;
+}
+
+.login-btn{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: var(--gold);
+  font-weight: bold;
+  color: rgb(23, 31, 53);
+}
+
+.login-btn:hover{
+  transform: scale(0.99);
+}
+
+.login-header{
+  text-align: left;
+  color: wheat;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.fas{
+  color: rgb(191, 192, 185);
+  margin-left: 15px;
+  margin-top: 10%;
+}
+
+.notif {
+  background: var(--gold);
+  color: #3d2a2a;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgb(100, 105, 52);
+  font-size: 1rem;
+  top: 88%;
+  left: 20;
+  border-left: 5px solid #ff0000;
+  position: absolute;
+  display: fixed;
+  text-align: center;
+  animation-duration: 1s;
+}
+
+.notif.show {
+  animation-name: slideIn;
+}
+
+.notif p {
+  margin: 0;
+}
+
+.err {
+  background-color: #ec2f21;
+  color: white;
+  padding: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+body{
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: center top;
+  overflow: hidden;
+}
+
+@media (max-width: 425px) and (min-width: 320px) {
+  .logincontainer {
+    width: 90%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 425px){
+  input{
+    margin-top: -31.8px;
+  }
+}
+
+@media (max-width: 524px){
+  .fa-cart-plus{
+    margin-top: -23px;
+  }
+}
+
+.fa-cart-plus{
+  margin-left: 85%;
+  font-size: 1.5rem;
+}
+
+.fa-bars{
+  margin-left: 5%;
+  font-size: 1.5rem;
+  margin-top: 30px;
 }
