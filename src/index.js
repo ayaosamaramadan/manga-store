@@ -1,7 +1,5 @@
-
-
 document.getElementById('loginform').addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
     let email = document.getElementById('email');
     let password = document.getElementById('password');
 
@@ -30,29 +28,25 @@ document.getElementById('loginform').addEventListener('submit', function (event)
         event.preventDefault();
         notific('Password must contain at least one UpperCase letter');
     }
-    else {let userKey = `user_${email.value}`;
-    let storedUser = JSON.parse(localStorage.getItem(userKey));
+    else {
+        let userKey = `user_${email.value}`;
+        let storedUser = JSON.parse(localStorage.getItem(userKey));
 
-    if (storedUser) {
-        if (storedUser.password === password.value) {
-            localStorage.setItem('loggedInUser', userKey);
-            event.preventDefault();
-            window.location.href = './home.html';
+        if (storedUser) {
+            if (storedUser.password === password.value) {
+                localStorage.setItem('loggedInUser', userKey);
+                event.preventDefault();
+                window.location.href = './home.html';
+            } else {
+                notific('Incorrect password.');
+            }
         } else {
-            notific('Incorrect password.');
+            localStorage.setItem(userKey, JSON.stringify({ email: email.value, password: password.value }));
+            localStorage.setItem('loggedInUser', userKey);
+            window.location.href = './home.html';
         }
-    } else {
-        localStorage.setItem(userKey, JSON.stringify({ email: email.value, password: password.value }));
-        localStorage.setItem('loggedInUser', userKey);
-        window.location.href = './home.html';
     }
-}
-    
-
-   
 });
-
-
 
 const notific = (massage) => {
     let notif = document.createElement("div");
@@ -70,9 +64,3 @@ const notific = (massage) => {
         }, 300);
     }, 6000);
 };
-
-
-
-// console.log(emailPattern.test(email.value));
-
-// console.log(localStorage.getItem('userKey'));
