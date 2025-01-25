@@ -30,18 +30,32 @@ const fetched = (url, page) => {
 
 const displaydata = (listt) => {
     const mangadiv = document.getElementById('manga-container');
+    mangadiv.classList.add('manga-container');
     listt.forEach(manga => {
 
         const themanga = document.createElement('div');
+        themanga.setAttribute('class', 'manga');
         themanga.classList.add('mangastyle');
         themanga.innerHTML = `
           
-            <img src="${manga.images.jpg.image_url}" alt="${manga.title}">
-              <h3 class='text-red-600'>${manga.title}</h3><p>${manga.synopsis}</p>
-             <button class="text-red-600 add-to-cart" mangaid="${manga.mal_id}">Add To Cart</button>
-    
-        `;
+           <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title}">
+            <h3 class='manga-title'>${manga.title}</h3>
+            <p class="manga-synopsis">${limited(manga.synopsis, 10)}</p>
+            <button class="add-to-cart" data-manga-id="${manga.mal_id}">Add To Cart</button>
+       
+            `;
 
         mangadiv.appendChild(themanga);
     });
+};
+
+const limited = (text, limitt) => {
+    const words = text.split(' ');
+
+
+    if (words.length > limitt) 
+        {
+         return  words.slice(0, limitt).join(' ') + '... READ MORE';
+    }
+    return text;
 };

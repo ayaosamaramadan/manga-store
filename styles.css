@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -8,19 +10,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -28,28 +30,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 ::backdrop {
@@ -62,19 +64,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -82,28 +84,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 /*
@@ -486,7 +488,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -562,11 +565,18 @@ video {
   text-align: center;
 }
 
-.text-wheat , .fa-solid{
+.text-wheat,
+.fa-solid {
   color: wheat;
 }
 
-.font-bold{
+.text-white {
+  color: white;
+}
+
+
+
+.font-bold {
   font-weight: bold;
 
 }
@@ -596,18 +606,18 @@ video {
   margin-left: auto;
   margin-right: auto;
   border: 2px solid rgb(230, 191, 120);
- padding: 10px;
+  padding: 10px;
   width: 400px;
   height: 550px;
   border-radius: 10px;
   height: 70%;
- }
-
- :root {
-  --gold: linear-gradient(90deg, rgba(135,109,11,1) 0%, rgba(255,234,156,0.927608543417367) 48%, rgba(217,173,13,1) 100%);
 }
 
-input{
+:root {
+  --gold: linear-gradient(90deg, rgba(135, 109, 11, 1) 0%, rgba(255, 234, 156, 0.927608543417367) 48%, rgba(217, 173, 13, 1) 100%);
+}
+
+input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -620,16 +630,16 @@ input{
 }
 
 input::placeholder {
-  color: wheat; 
+  color: wheat;
 
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #101a30 inset !important;
-  -webkit-text-fill-color: wheat !important; 
+  -webkit-text-fill-color: wheat !important;
 }
 
-.login-btn{
+.login-btn {
   background: var(--gold);
   width: 100%;
   padding: 10px;
@@ -640,18 +650,18 @@ input:-webkit-autofill {
   color: rgb(23, 31, 53);
 }
 
-.login-btn:hover{
-transform: scale(0.99);
+.login-btn:hover {
+  transform: scale(0.99);
 }
 
-.login-header{
+.login-header {
   text-align: left;
   color: wheat;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.fas{
+.fas {
   color: rgb(191, 192, 185);
   margin-left: 15px;
   margin-top: 10%;
@@ -672,17 +682,17 @@ transform: scale(0.99);
   position: absolute;
   display: fixed;
   text-align: center;
-  
+
 }
 
 .notif {
   animation-duration: 1s;
- 
+
 }
 
 .notif.show {
   animation-name: slideIn;
- 
+
 }
 
 .notif p {
@@ -704,16 +714,18 @@ transform: scale(0.99);
     opacity: 0;
     transform: translateX(-100%);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-body{
-  background-repeat: no-repeat;
-height: 100vh;
-background-position: center top;
+body {
+  height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+
 
 }
 
@@ -722,48 +734,115 @@ background-position: center top;
     width: 90%;
     height: 70%;
   }
- 
- 
+
+
 }
 
-@media (max-width: 425px){
-  input{
+@media (max-width: 425px) {
+  input {
 
     margin-top: -31.8px;
 
   }
 
 
+
+}
+
+
+
+.fa-cart-plus {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  z-index: 1000;
+}
+
+.fa-bars {
+  position: fixed;
+  font-size: 1.5rem;
+  top: 30px;
+  left: 30px;
+}
+
+.mangastyle {
+
+  justify-content: space-between;
+  padding: 10px;
+  border: 6px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  margin-left: 1%;
+  margin-top: 100px;
+  margin-bottom: -60px;
+  
+ 
+  text-align: center;
+
+}
+
+.mangaimg {
+  border: 2px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  width: 90%;
+  margin-left: 10px;
+  height: 300px;
  
 }
 
-@media (max-width: 524px){
-.fa-cart-plus{
-
-  margin-top: -23px;
-}
-}
-
-.fa-cart-plus{
-  margin-left: 85%;
-
-  font-size: 1.5rem;
-
+.manga-title {
+  color: wheat;
+  font-size: 1.2rem;
+  margin: 10px;
+  text-align: center;
 }
 
-.fa-bars{
-  margin-left: 5%;
-  font-size: 1.5rem; 
- margin-top: 30px;
+.manga-synopsis {
+  color: #d3d3d3;
+  font-size: 1rem;
+  margin: 10px;
+  text-align: justify;
 }
 
-.mangastyle{
-  display: flex;
-  justify-content: space-between;
+.add-to-cart {
+  background-image:  url(./images/goldborder.jpg);
+  color: rgba(0, 0, 0, 0.712);
+  border: none;
+  font-weight: 700;
   padding: 10px;
-  border-bottom: 1px solid wheat;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  text-align: center;
 }
 
-.text-red-600{
+
+.add-to-cart:hover {
+  transform: scale(0.99);
+}
+
+.manga-container { display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;}
+
+.text-red-600 {
   color: red;
+}
+
+.manga {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
+}
+
+.manga:hover {
+  transform: translateY(-10px);
 }
