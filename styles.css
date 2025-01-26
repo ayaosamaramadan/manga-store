@@ -766,7 +766,7 @@ body {
   position: fixed;
   font-size: 1.5rem;
   top: 30px;
-  left: 30px;
+  left: 120px;
 }
 
 .mangastyle {
@@ -973,4 +973,22 @@ body {
  border-radius: 30px;
   border: 0.5px solid #ffffff41;
   z-index: 2;
+}
+
+.fa-arrow-left{
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  font-size: 1.5rem;
+  color: wheat;
+  
+}
+
+.fa-arrow-left:hover {
+  transform: scale(1.1);
+  
+  cursor: pointer;
+  background-color: #776e6e4d;
+  border-radius: 50%;
+  padding: 5px;
 }

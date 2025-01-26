@@ -1,7 +1,7 @@
 
 let cartItems = [];
 let numberitems = document.getElementById('number-itemsPack');
-
+let back = document.getElementById('back-btn');
 
 document.addEventListener('DOMContentLoaded', function () {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
@@ -88,13 +88,6 @@ const limited = (text, limitt) => {
     return text;
 };
 
-
-// cart.addEventListener('click', function() {
-//     let cartitems = document.getElementById('cart-items');
-
-// });
-
-
-
-
-
+back.addEventListener('click', function() {
+    history.back();
+});

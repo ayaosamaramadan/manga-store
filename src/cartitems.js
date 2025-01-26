@@ -1,6 +1,7 @@
 let totalpriceDiv = document.getElementById('total-p');
 let removeCart = document.getElementById('remove-cart');
 let totalPrice = 0;
+let back = document.getElementById('back-btn');
 
 let currItem = 0;
 
@@ -47,3 +48,7 @@ const removecart = (cartItem, index) => {
     }
     location.reload();
 }
+
+back.addEventListener('click', function() {
+    history.back();
+});
