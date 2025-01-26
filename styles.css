@@ -722,11 +722,10 @@ input:-webkit-autofill {
 }
 
 body {
+  font-family:'Times New Roman', Times, serif;
   height: 100vh;
   background-size: cover;
   background-attachment: fixed;
-
-
 }
 
 @media (max-width: 425px) and (min-width: 320px) {
@@ -759,6 +758,11 @@ body {
   z-index: 1000;
 }
 
+.fa-cart-plus:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .fa-bars {
   position: fixed;
   font-size: 1.5rem;
@@ -779,7 +783,22 @@ body {
   text-align: center;
 }
 
-.mangaimg {
+.cartstyle {
+ display: flex;
+  padding: 10px;
+  border: 6px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+ 
+  margin-top: 100px;
+  margin-bottom: -60px;
+}
+
+.cartstyle:hover {
+  transform: translateY(-10px);
+}
+
+.manga-img {
   border: 2px solid wheat;
   border-image: url(./images/goldborder.jpg);
   border-image-slice: 30;
@@ -789,12 +808,46 @@ body {
  
 }
 
+
+.cartItem-img {
+  border: 2px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  width: 150px;
+  margin-left: 10px;
+  
+}
+
+.cartItem-title {
+  color: #d10e0e;
+  font-size: 1.2rem;
+  margin: 10px 0;
+
+}
+
+.cartItem-synopsis {
+
+  color: #d3d3d3;
+  font-size: 1rem;
+  margin: 10px 0;
+  text-align: justify;
+} 
+
+.cartItem-info{
+ display: inline;
+  justify-content: space-between;
+  align-items: left;
+ 
+}
+
+
 .manga-title {
   color: wheat;
   font-size: 1.2rem;
   margin: 10px;
   text-align: center;
 }
+
 
 .manga-synopsis {
   color: #d3d3d3;
@@ -836,7 +889,7 @@ body {
 }
 
 .manga {
-  background-color: #1e1e1e;
+  background-color: #1e1e1e65;
     border-radius: 10px;
     overflow: hidden;
     width: 300px;
@@ -849,4 +902,35 @@ body {
 
 .manga:hover {
   transform: translateY(-10px);
+}
+
+@media (max-width: 1440px) {
+  .cartstyle {
+    
+    margin-left: 5%;
+  margin-right: 60%;
+  }
+  
+}
+@media (max-width: 768px) {
+  .cartstyle {
+    
+    margin-left: 5%;
+  margin-right: 40%;
+  }
+  
+}
+@media (max-width: 425px) {
+  .cartstyle {
+    margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+  }
+
+  .cartItem-img {
+    width: 150px;
+    height: 190px;
+    margin-left: 0px;
+  }
+  
 }

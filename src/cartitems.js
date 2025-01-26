@@ -5,21 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         cartItems.forEach(cartItem => {
             const mangaincart = document.createElement('div');
-            mangaincart.classList.add('cart-item');
+            mangaincart.classList.add('cartstyle');
+            // mangaincart.style.cssText = "margin: 4%; padding: 10px;";
             mangaincart.innerHTML = `
-                <img class="mangaimg" src="${cartItem.images.jpg.image_url}" alt="${cartItem.title}">
+                <img class="cartItem-img" src="${cartItem.images.jpg.image_url}" alt="${cartItem.title}">
+                <div class="cartItem-info">
                 <h3 class='cartItem-title'>${cartItem.title}</h3>
-                <p class="cartItem-synopsis">${limited(cartItem.synopsis, 10)}</p>
-            `;
+                <br>   
+
+                <p class="cartItem-price text-wheat">$${cartItem.score}</p>
+            </div>
+                `;
             cartitemsdiv.appendChild(mangaincart);
         });
     
 });
 
-const limited = (text, limitt) => {
-    const words = text.split(' ');
-    if (words.length > limitt) {
-        return words.slice(0, limitt).join(' ') + '...';
-    }
-    return text;
-};
