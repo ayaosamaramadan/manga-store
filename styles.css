@@ -753,9 +753,8 @@ body {
 .fa-cart-plus {
   position: fixed;
   top: 30px;
-  right: 30px;
-  font-size: 1.5rem;
-  z-index: 1000;
+  right: 45px;
+  font-size: 1.6rem;
 }
 
 .fa-cart-plus:hover {
@@ -957,4 +956,21 @@ body {
 
 .remove-cart:hover {
   transform: scale(1.1);
+}
+
+#number-itemsPack{
+  position: fixed;
+
+  top: 42px;
+  right: 30px;
+  font-size: 1rem;
+
+   color: rgb(255, 255, 255);
+  background-color: #a81308;
+  padding-left: 8px;
+
+  padding-right:8px;
+ border-radius: 30px;
+  border: 0.5px solid #ffffff41;
+  z-index: 2;
 }
