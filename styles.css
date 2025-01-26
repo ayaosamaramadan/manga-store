@@ -794,9 +794,6 @@ body {
   margin-bottom: -60px;
 }
 
-.cartstyle:hover {
-  transform: translateY(-10px);
-}
 
 .manga-img {
   border: 2px solid wheat;
@@ -944,4 +941,20 @@ body {
   margin-top: 10px;
   font-size: 1.5rem;
   color: wheat;
+}
+
+.remove-cart{
+  background-color: #ec2f2159;
+  color: white;
+  padding: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 100px;
+  margin-left: 240px;
+  cursor: pointer;
+  position: relative;
+}
+
+.remove-cart:hover {
+  transform: scale(1.1);
 }
