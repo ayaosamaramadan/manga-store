@@ -59,9 +59,11 @@ const displaydata = (listt) => {
 
 
 selectedManga.addEventListener('click', function() {
-    cartItems.push(manga);
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    console.log('Cart items:', cartItems);
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const newcartitems = [...cartItems,  manga];
+
+    localStorage.setItem('cartItems', JSON.stringify(newcartitems));
+    console.log('Cart items:', newcartitems);
 
 });
 
