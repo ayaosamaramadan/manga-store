@@ -934,3 +934,14 @@ body {
   }
   
 }
+
+
+#total-p{
+  position: fixed;
+  top: 60px;
+  right: 400px;
+  margin-left: 5%;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: wheat;
+}

@@ -49,6 +49,7 @@ const displaydata = (listt) => {
            <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title}">
             <h3 class='manga-title'>${manga.title}</h3>
             <p class="manga-synopsis">${limited(manga.synopsis, 10)}</p>
+            <p class="manga-price text-wheat">$${manga.score}</p>
             <button class="add-to-cart" id="${manga.mal_id}">Add To Cart</button>
        
             `;

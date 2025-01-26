@@ -1,3 +1,5 @@
+let totalpriceDiv = document.getElementById('total-p');
+let totalPrice = 0;
 document.addEventListener('DOMContentLoaded', function() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartitemsdiv = document.getElementById('cart-items');
@@ -16,8 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="cartItem-price text-wheat">$${cartItem.score}</p>
             </div>
                 `;
+            totalPrice += cartItem.score;
+            totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(2)}`;
             cartitemsdiv.appendChild(mangaincart);
         });
     
 });
 
+(totalPrice===0)?totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`:totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
