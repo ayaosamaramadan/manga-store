@@ -776,10 +776,7 @@ body {
   margin-left: 1%;
   margin-top: 100px;
   margin-bottom: -60px;
-  
- 
   text-align: center;
-
 }
 
 .mangaimg {
@@ -788,7 +785,7 @@ body {
   border-image-slice: 30;
   width: 90%;
   margin-left: 10px;
-  height: 300px;
+  height: auto;
  
 }
 
@@ -803,6 +800,7 @@ body {
   color: #d3d3d3;
   font-size: 1rem;
   margin: 10px;
+
   text-align: justify;
 }
 
@@ -817,6 +815,7 @@ body {
   cursor: pointer;
   width: calc(100% - 20px);
   text-align: center;
+  
 }
 
 
@@ -825,10 +824,12 @@ body {
 }
 
 .manga-container { display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;}
+   display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
 
 .text-red-600 {
   color: red;
@@ -836,11 +837,14 @@ body {
 
 .manga {
   background-color: #1e1e1e;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .manga:hover {

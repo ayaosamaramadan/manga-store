@@ -1,3 +1,6 @@
+
+let cartItems = [];
+
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
     if (!loggedInUserKey) {
@@ -29,6 +32,11 @@ const fetched = (url, page) => {
 };
 
 const displaydata = (listt) => {
+    let cart = document.getElementById('cart'); 
+    cart.addEventListener('click', function() {
+        window.location.href = "../cartitems.html";
+    });
+    
     const mangadiv = document.getElementById('manga-container');
     mangadiv.classList.add('manga-container');
     listt.forEach(manga => {
@@ -41,12 +49,25 @@ const displaydata = (listt) => {
            <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title}">
             <h3 class='manga-title'>${manga.title}</h3>
             <p class="manga-synopsis">${limited(manga.synopsis, 10)}</p>
-            <button class="add-to-cart" data-manga-id="${manga.mal_id}">Add To Cart</button>
+            <button class="add-to-cart" id="${manga.mal_id}">Add To Cart</button>
        
             `;
 
         mangadiv.appendChild(themanga);
+
+        let selectedManga = document.getElementById(`${manga.mal_id}`);
+
+
+selectedManga.addEventListener('click', function() {
+    cartItems.push(manga);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    console.log('Cart items:', cartItems);
+
+});
+
     });
+
+    
 };
 
 const limited = (text, limitt) => {
@@ -59,3 +80,14 @@ const limited = (text, limitt) => {
     }
     return text;
 };
+
+
+// cart.addEventListener('click', function() {
+//     let cartitems = document.getElementById('cart-items');
+
+// });
+
+
+
+
+
