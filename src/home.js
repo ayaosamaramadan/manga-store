@@ -2,7 +2,9 @@
 let cartItems = [];
 let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
-
+let menu = document.getElementById('menu');
+let menuDiv = document.getElementById('menuDiv');
+let logout = document.getElementById('logoutLi');
 document.addEventListener('DOMContentLoaded', function () {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
     if (!loggedInUserKey) {
@@ -91,3 +93,16 @@ const limited = (text, limitt) => {
 back.addEventListener('click', function() {
     history.back();
 });
+
+menu.addEventListener('click', function() {
+    (menuDiv.style.display === 'block') ? menuDiv.style.cssText = 'display:none;' : menuDiv.style.display = 'block';
+    if (menuDiv.style.display === 'block') {
+        menuDiv.classList.add('animate-out');
+    }
+   });
+
+logout.addEventListener('click', function() {
+    localStorage.removeItem('loggedInUser');
+    window.location.href = './index.html';
+}
+);
