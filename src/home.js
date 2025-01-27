@@ -4,16 +4,18 @@ let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
 let menuDiv = document.getElementById('menuDiv');
+
 let logout = document.getElementById('logoutLi');
 document.addEventListener('DOMContentLoaded', function () {
-    const loggedInUserKey = localStorage.getItem('loggedInUser');
+    const loggedInUserKey= localStorage.getItem('loggedInUser');
     if (!loggedInUserKey) {
-
-        window.location.href = './index.html';
+       
+        window.location.href = '../index.html';
     } else {
+       
+        const user =JSON.parse(localStorage.getItem(loggedInUserKey));
 
-        const user = JSON.parse(localStorage.getItem(loggedInUserKey));
-        console.log('Welcome, ' + user.email);
+        console.log('Logged in user:', user);
     }
 
     fetched('https://api.jikan.moe/v4/manga', 1);
@@ -31,8 +33,7 @@ const fetched = (url, page) => {
             if (data.pagination && data.pagination.has_next_page) {
                 fetched(url, page + 1);
             }
-        })
-        .catch(error => console.error('error on  fetch', error));
+        }).catch(error => console.error('error on  fetch', error));
 };
 
 
@@ -114,6 +115,7 @@ const limited = (text, limitt) => {
 
 back.addEventListener('click', function() {
     history.back();
+    localStorage.removeItem('loggedInUser');
 });
 
 menu.addEventListener('click', function() {
