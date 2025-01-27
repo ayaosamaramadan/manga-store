@@ -5,35 +5,55 @@ let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
 let menuDiv = document.getElementById('menuDiv');
 
+
 let logout = document.getElementById('logoutLi');
 document.addEventListener('DOMContentLoaded', function () {
-    const loggedInUserKey= localStorage.getItem('loggedInUser');
+    const loggedInUserKey = localStorage.getItem('loggedInUser');
     if (!loggedInUserKey) {
-       
+
         window.location.href = '../index.html';
     } else {
-       
-        const user =JSON.parse(localStorage.getItem(loggedInUserKey));
 
-        console.log('Logged in user:', user);
+        const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+
+        // console.log('Logged in user:', user);
     }
 
     fetched('https://api.jikan.moe/v4/manga', 1);
+
 });
 
 const fetched = (url, page) => {
+    showLoading();
     fetch(`${url}?page=${page}`)
         .then(response => response.json())
         .then(data => {
             console.log('Manga data:', data);
-
-            displaydata(data.data);
-
-
-            if (data.pagination && data.pagination.has_next_page) {
-                fetched(url, page + 1);
+            if (data.data) {
+                displaydata(data.data);
+            } else {
+                console.error('No data found in response');
             }
-        }).catch(error => console.error('error on  fetch', error));
+            hideLoading();
+        })
+        .catch(error => {
+            console.error('Error fetching manga data:', error);
+            hideLoading();
+        });
+};
+
+const showLoading = () => {
+    const loadingDiv = document.getElementById('loading');
+    if (loadingDiv) {
+        loadingDiv.style.display = 'block';
+    }
+};
+
+const hideLoading = () => {
+    const loadingDiv = document.getElementById('loading');
+    if (loadingDiv) {
+        loadingDiv.style.display = 'none';
+    }
 };
 
 
@@ -57,8 +77,9 @@ const notific = (massage) => {
 
 
 const displaydata = (listt) => {
-    let cart = document.getElementById('cart');
-    cart.addEventListener('click', function () {
+    
+let cartDiv = document.getElementById('cartDiv');
+cartDiv.addEventListener('click', function () {
         window.location.href = "../cartitems.html";
     });
 
@@ -81,18 +102,18 @@ const displaydata = (listt) => {
 
         let selectedManga = document.getElementById(`${manga.mal_id}`);
 
-      
+
         selectedManga.addEventListener('click', function () {
             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-             newcartitems = [...cartItems, manga];
+            newcartitems = [...cartItems, manga];
 
             localStorage.setItem('cartItems', JSON.stringify(newcartitems));
             console.log('Cart items:', newcartitems);
 
-       itemNumber = cartItems.length + 1;
-  numberitems.innerHTML = itemNumber;
+            itemNumber = cartItems.length + 1;
+            numberitems.innerHTML = itemNumber;
 
-  notific('Item added to cart');
+            notific('Item added to cart');
         });
 
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -113,19 +134,19 @@ const limited = (text, limitt) => {
     return text;
 };
 
-back.addEventListener('click', function() {
+back.addEventListener('click', function () {
     history.back();
     localStorage.removeItem('loggedInUser');
 });
 
-menu.addEventListener('click', function() {
+menu.addEventListener('click', function () {
     (menuDiv.style.display === 'block') ? menuDiv.style.cssText = 'display:none;' : menuDiv.style.display = 'block';
     if (menuDiv.style.display === 'block') {
         menuDiv.classList.add('animate-out');
     }
-   });
+});
 
-logout.addEventListener('click', function() {
+logout.addEventListener('click', function () {
     localStorage.removeItem('loggedInUser');
     window.location.href = './index.html';
 }

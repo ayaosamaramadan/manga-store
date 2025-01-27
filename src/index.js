@@ -52,43 +52,33 @@ document.getElementById('loginform').addEventListener('submit', function (event)
                 localStorage.setItem('loggedInUser', userKey);
                 window.location.href = '../home.html';
             }
-
-
-
-
-
-            // let user = {
-            //     email: email.value,
-            //     password: password.value
-            // };
-            // localStorage.setItem(userKey, JSON.stringify(user));
-            // localStorage.setItem('loggedInUser', userKey);
-            // window.location.href = '../home.html';
-        } 
+        }
     }
-    else if (submitBtn.innerHTML === 'Login') { let userKey = `user_${email.value}`;
+    else if (submitBtn.innerHTML === 'Login') {
+        let userKey = `user_${email.value}`;
         let storedUser = JSON.parse(localStorage.getItem(userKey));
         if (storedUser) {
-            if (storedUser.password === password.value ) {
+            if (storedUser.password === password.value) {
                 event.preventDefault();
                 localStorage.setItem('loggedInUser', userKey);
                 window.location.href = '../home.html';
             }
-            else  {
+            else {
                 notific('Invalid password');
             }
         }
         else {
             notific('User not found');
         }
-    }}
-       
+    }
+}
+
 
 );
 
 
 signup.addEventListener('click', function (
-    ) {
+) {
     namee.innerHTML = 'Sign Up';
     submitBtn.innerHTML = 'Sign Up';
     ismember.style.display = 'none';

@@ -1,24 +1,26 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="./styles.css">
-  
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="./styles.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body class="custome-imge">
   <i class="fa-solid fa-arrow-left" id="back-btn"></i>
-    <i class="fa-solid fa-bars" id="menu"></i>
-    <div id="menuDiv">
-        <ul class="text-wheat logout">
-          <li class="flex" id="logoutLi">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-       <p>Logout</p>
-          </li>
-         </ul>
-    </div>
-    <!-- <input
+  <i class="fa-solid fa-bars" id="menu"></i>
+  <div id="menuDiv">
+    <ul class="text-wheat logout">
+      <li class="flex" id="logoutLi">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <p>Logout</p>
+      </li>
+    </ul>
+  </div>
+  <!-- <input
           type="text"
           id="search"
           placeholder="Search..."
@@ -30,11 +32,16 @@
           class="text-wheat"
         >
           <i class="fas fa-magnifying-glass "></i> -->
+  <div id="cartDiv">
     <p class="" id="number-itemsPack"></p>
-<i class="fa-solid fa-cart-plus" id="cart"></i>
- 
-    <div id="manga-container"></div>
- 
-    <script src="./src/home.js"></script>
+    <i class="fa-solid fa-cart-plus" id="cart"></i>
+  </div>
+
+
+  <div id="loading" class="loading">Loading...</div>
+  <div id="manga-container"></div>
+
+  <script src="./src/home.js"></script>
 </body>
+
 </html>

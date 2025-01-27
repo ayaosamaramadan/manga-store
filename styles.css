@@ -1108,3 +1108,21 @@ body {
   border-radius: 20px;
   margin-right: 10px;
 }
+
+
+.loading {
+  display: none;
+  position:fixed;
+  top:50%;
+    left: 45%;  
+   border-image: url(./images/goldborder.jpg);
+  border-image-slice: 80;
+  border-width:  1px ;
+  background-color: #101a30;
+  
+  font-size: 1.2rem;
+  color: wheat;
+ padding: 20px;
+  border-radius: 5px;
+ 
+}
