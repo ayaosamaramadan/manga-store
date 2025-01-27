@@ -25,11 +25,10 @@ const notific = (massage) => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
-    const storedUser = JSON.parse(localStorage.getItem(userKey));
-
-    if (loggedInUserKey ===storedUser.email) {
+    const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+    if (loggedInUserKey) {
         const cartitemsdiv = document.getElementById('cart-items');
-        cartItems.forEach((cartItem, index)=> {
+        user.cartItems.forEach((cartItem, index)=> {
             const mangaincart = document.createElement('div');
             mangaincart.classList.add('cartstyle');
             mangaincart.setAttribute('id', `cart-item-${index}`);
@@ -50,15 +49,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    
 });
 
 (totalPrice===0)?totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`:totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
 
 const removecart = (cartItem, index) => {  
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const newcartitems = cartItems.filter((item, i) => i !== index);
-    localStorage.setItem('cartItems', JSON.stringify(newcartitems));
+    const loggedInUserKey = localStorage.getItem('loggedInUser');
+    const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+
+    const newcartitems = user.cartItems.filter((item, i) => i !== index);
+    localStorage.setItem(loggedInUserKey, JSON.stringify({...user, cartItems: newcartitems}));
     document.getElementById(`cart-item-${index}`).remove();
     totalPrice -= cartItem.score;
     totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(4)}`;

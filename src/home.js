@@ -112,7 +112,7 @@ cartDiv.addEventListener('click', function () {
                 }
                 user.cartItems.push(manga);
                 localStorage.setItem(loggedInUserKey, JSON.stringify(user));
-                notific(`${manga.title} added to cart`);
+                notific("Item added to cart");
                 const itemNumber = user.cartItems.length;
                  numberitems.innerHTML = itemNumber;
             }
@@ -142,10 +142,6 @@ const limited = (text, limitt) => {
     return text;
 };
 
-back.addEventListener('click', function () {
-    history.back();
-    localStorage.removeItem('loggedInUser');
-});
 
 menu.addEventListener('click', function () {
     (menuDiv.style.display === 'block') ? menuDiv.style.cssText = 'display:none;' : menuDiv.style.display = 'block';
