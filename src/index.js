@@ -14,13 +14,56 @@ document.getElementById('loginform').addEventListener('submit', function (event)
         if (storedUser && storedUser.email === email.value) {
             notific('Email already exists');
         } else {
-            let user = {
-                email: email.value,
-                password: password.value
-            };
-            localStorage.setItem(userKey, JSON.stringify(user));
-            localStorage.setItem('loggedInUser', userKey);
-            window.location.href = '../home.html';
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            let upperCase = /[A-Z]/;
+
+
+            if (email.value === '' && password.value !== '') {
+                event.preventDefault();
+                notific('Email is required');
+            }
+            else if (password.value === '' && email.value !== '') {
+                event.preventDefault();
+                notific('Password is required');
+            }
+            else if (email.value === '' && password.value === '') {
+                event.preventDefault();
+                notific('Email and Password are required');
+            }
+            else if (!emailPattern.test(email.value)) {
+                event.preventDefault();
+                notific("Please enter a valid email address. Example: user@example.com");
+            }
+            else if (!upperCase.test(password.value)) {
+                event.preventDefault();
+                notific('Password must contain at least one upper letter');
+            }
+            else if (password.value.length < 8) {
+                event.preventDefault();
+                notific('Password must be at least 8 characters');
+            }
+            else {
+                let user = {
+                    email: email.value,
+                    password: password.value
+                };
+                localStorage.setItem(userKey, JSON.stringify(user));
+                localStorage.setItem('loggedInUser', userKey);
+                window.location.href = '../home.html';
+            }
+
+
+
+
+
+            // let user = {
+            //     email: email.value,
+            //     password: password.value
+            // };
+            // localStorage.setItem(userKey, JSON.stringify(user));
+            // localStorage.setItem('loggedInUser', userKey);
+            // window.location.href = '../home.html';
         } 
     }
     else if (submitBtn.innerHTML === 'Login') { let userKey = `user_${email.value}`;
