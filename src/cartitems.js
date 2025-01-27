@@ -24,8 +24,11 @@ const notific = (massage) => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const cartitemsdiv = document.getElementById('cart-items');
+    const loggedInUserKey = localStorage.getItem('loggedInUser');
+    const storedUser = JSON.parse(localStorage.getItem(userKey));
+
+    if (loggedInUserKey ===storedUser.email) {
+        const cartitemsdiv = document.getElementById('cart-items');
         cartItems.forEach((cartItem, index)=> {
             const mangaincart = document.createElement('div');
             mangaincart.classList.add('cartstyle');
@@ -43,15 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
             totalPrice += cartItem.score;
             totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(4)}`;
             cartitemsdiv.appendChild(mangaincart);
-            currItem++;
-            
-            
+            currItem++; 
         });
+    }
+
     
 });
 
 (totalPrice===0)?totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`:totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
-
 
 const removecart = (cartItem, index) => {  
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -65,8 +67,6 @@ const removecart = (cartItem, index) => {
         totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
     }
     notific('Item removed from cart');
-
-
 }
 
 back.addEventListener('click', function() {

@@ -9,7 +9,7 @@ document.getElementById('loginform').addEventListener('submit', function (event)
     event.preventDefault();
 
     if (submitBtn.innerHTML === 'Sign Up') {
-        let userKey = `user_${email.value}`;
+        let userKey = `${email.value}`;
         let storedUser = JSON.parse(localStorage.getItem(userKey));
         if (storedUser && storedUser.email === email.value) {
             notific('Email already exists');
@@ -55,7 +55,7 @@ document.getElementById('loginform').addEventListener('submit', function (event)
         }
     }
     else if (submitBtn.innerHTML === 'Login') {
-        let userKey = `user_${email.value}`;
+        let userKey = `${email.value}`;
         let storedUser = JSON.parse(localStorage.getItem(userKey));
         if (storedUser) {
             if (storedUser.password === password.value) {

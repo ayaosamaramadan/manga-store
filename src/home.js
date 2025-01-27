@@ -1,5 +1,5 @@
 
-let cartItems = [];
+
 let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
@@ -28,7 +28,7 @@ const fetched = (url, page) => {
     fetch(`${url}?page=${page}`)
         .then(response => response.json())
         .then(data => {
-            console.log('Manga data:', data);
+            // console.log('Manga data:', data);
             if (data.data) {
                 displaydata(data.data);
             } else {
@@ -104,21 +104,29 @@ cartDiv.addEventListener('click', function () {
 
 
         selectedManga.addEventListener('click', function () {
-            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            newcartitems = [...cartItems, manga];
-
-            localStorage.setItem('cartItems', JSON.stringify(newcartitems));
-            console.log('Cart items:', newcartitems);
-
-            itemNumber = cartItems.length + 1;
-            numberitems.innerHTML = itemNumber;
-
-            notific('Item added to cart');
+            const loggedInUserKey = localStorage.getItem('loggedInUser');
+            if (loggedInUserKey) {
+                const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+                if (!user.cartItems) {
+                    user.cartItems = [];
+                }
+                user.cartItems.push(manga);
+                localStorage.setItem(loggedInUserKey, JSON.stringify(user));
+                notific(`${manga.title} added to cart`);
+                const itemNumber = user.cartItems.length;
+                 numberitems.innerHTML = itemNumber;
+            }
+           
         });
-
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        itemNumber = cartItems.length;
-        numberitems.innerHTML = itemNumber;
+        const loggedInUserKey = localStorage.getItem('loggedInUser');
+        if (loggedInUserKey) {
+            const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+            if (!user.cartItems) {
+                user.cartItems = [];
+            }
+            const itemNumber = user.cartItems.length;
+            numberitems.innerHTML = itemNumber;
+        }
     });
 
 
