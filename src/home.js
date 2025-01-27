@@ -35,6 +35,26 @@ const fetched = (url, page) => {
         .catch(error => console.error('error on  fetch', error));
 };
 
+
+
+const notific = (massage) => {
+    let notif = document.createElement("div");
+    notif.setAttribute("class", "notif show");
+    let p = document.createElement("p");
+    p.setAttribute("class", "notif-p");
+    p.innerHTML = `<i class="fa-solid fa-check success"></i>  ${massage}`;
+    notif.appendChild(p);
+    document.body.appendChild(notif);
+    setTimeout(() => {
+        notif.classList.remove("show");
+        notif.classList.add("hide");
+        setTimeout(() => {
+            notif.remove();
+        }, 300);
+    }, 6000);
+};
+
+
 const displaydata = (listt) => {
     let cart = document.getElementById('cart');
     cart.addEventListener('click', function () {
@@ -70,6 +90,8 @@ const displaydata = (listt) => {
 
        itemNumber = cartItems.length + 1;
   numberitems.innerHTML = itemNumber;
+
+  notific('Item added to cart');
         });
 
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -106,3 +128,4 @@ logout.addEventListener('click', function() {
     window.location.href = './index.html';
 }
 );
+

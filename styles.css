@@ -1064,3 +1064,47 @@ body {
   }
   
 }
+
+
+.notif {
+  background: var(--gold);
+  color: #3d2a2a;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgb(100, 105, 52);
+  font-size: 1rem;
+  top: 88%;
+  left: 20;
+  border-left: 5px solid #009e0d;
+  position: fixed;
+
+  text-align: center;
+}
+
+.notif {
+  animation-duration: 1s;
+
+}
+
+.notif.show {
+  animation-name: slideIn;
+
+}
+
+
+
+.notif p {
+  margin: 0;
+}
+
+.success {
+  background-color: #378602;
+  color: white;
+  padding: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+}

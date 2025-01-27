@@ -5,6 +5,24 @@ let back = document.getElementById('back-btn');
 
 let currItem = 0;
 
+const notific = (massage) => {
+    let notif = document.createElement("div");
+    notif.setAttribute("class", "notif show");
+    let p = document.createElement("p");
+    p.setAttribute("class", "notif-p");
+    p.innerHTML = `<i class="fa-solid fa-check success"></i>  ${massage}`;
+    notif.appendChild(p);
+    document.body.appendChild(notif);
+    setTimeout(() => {
+        notif.classList.remove("show");
+        notif.classList.add("hide");
+        setTimeout(() => {
+            notif.remove();
+        }, 300);
+    }, 6000);
+};
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     const cartitemsdiv = document.getElementById('cart-items');
@@ -21,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
                 `;
             const removeButton = mangaincart.querySelector('.remove-cart');
-            removeButton.addEventListener('click', () => removecart(cartItem, index));
+            removeButton.addEventListener('click', () => {removecart(cartItem, index)});
             totalPrice += cartItem.score;
             totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(4)}`;
             cartitemsdiv.appendChild(mangaincart);
             currItem++;
-
+            
             
         });
     
@@ -46,7 +64,9 @@ const removecart = (cartItem, index) => {
     if(currItem === 0){
         totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
     }
-    location.reload();
+    notific('Item removed from cart');
+
+
 }
 
 back.addEventListener('click', function() {
