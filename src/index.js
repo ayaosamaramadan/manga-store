@@ -5,6 +5,10 @@ let signup = document.getElementById('signup');
 let namee = document.getElementById('name');
 let ismember = document.getElementById('not-memb');
 
+// let welcome = document.getElementById('welcomMass');
+console.log(localStorage.getItem('welcomeMassage'));
+
+
 document.getElementById('loginform').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -51,6 +55,13 @@ document.getElementById('loginform').addEventListener('submit', function (event)
                 localStorage.setItem(userKey, JSON.stringify(user));
                 localStorage.setItem('loggedInUser', userKey);
                 window.location.href = '../home.html';
+                localStorage.setItem('welcomeMassage', 'Welcome to manga store');
+            //    setInterval(() => {
+            //         localStorage.removeItem('welcomeMassage');
+            //     }, 2000);
+              
+                
+      
             }
         }
     }
@@ -62,6 +73,11 @@ document.getElementById('loginform').addEventListener('submit', function (event)
                 event.preventDefault();
                 localStorage.setItem('loggedInUser', userKey);
                 window.location.href = '../home.html';
+                // localStorage.removeItem('welcomeMassage');
+      localStorage.setItem('welcomeMassage', 'Welcome back to manga store');
+    //   setInterval(() => {
+    //     localStorage.removeItem('welcomeMassage');
+    // }, 2000);
             }
             else {
                 notific('Invalid password');
@@ -102,3 +118,5 @@ const notific = (massage) => {
     }, 6000);
 };
 
+
+// console.log(localStorage.getItem('welcomeMassage'));

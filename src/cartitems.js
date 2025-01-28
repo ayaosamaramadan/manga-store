@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const removeButton = mangaincart.querySelector('.remove-cart');
             removeButton.addEventListener('click', () => {removecart(cartItem, index)});
             totalPrice += cartItem.score;
-            totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(4)}`;
+            totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(2)}`;
             cartitemsdiv.appendChild(mangaincart);
             currItem++; 
         });
@@ -61,7 +61,9 @@ const removecart = (cartItem, index) => {
     localStorage.setItem(loggedInUserKey, JSON.stringify({...user, cartItems: newcartitems}));
     document.getElementById(`cart-item-${index}`).remove();
     totalPrice -= cartItem.score;
-    totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(4)}`;
+    totalPrice = Math.max(0, totalPrice);
+    
+    totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(2)}`;
     currItem--;
     if(currItem === 0){
         totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;

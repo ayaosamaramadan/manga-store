@@ -768,7 +768,7 @@ body {
   position: fixed;
   font-size: 1.5rem;
   top: 30px;
-  left: 120px;
+  left: 50px;
 
 }
 
@@ -940,15 +940,17 @@ body {
 }
 
 
-#total-p{
+#total-p {
   position: fixed;
   top: 60px;
-  right: 400px;
-  margin-left: 5%;
+  left: 54%;
+  transform: translateX(-50%);
+  width: 289px;
   margin-top: 10px;
   font-size: 1.5rem;
   color: wheat;
 }
+
 
 .remove-cart{
   background-color: #ec2f2159;
@@ -983,15 +985,6 @@ body {
   z-index: 2;
 }
 
-.fa-arrow-left{
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  font-size: 1.5rem;
-  color: wheat;
-  
-}
-
 .fa-arrow-left:hover {
   transform: scale(1.1);
 
@@ -1001,23 +994,14 @@ body {
   padding: 5px;
 }
 
-#menuDiv {
-  display: none;
-  position: fixed;
-  font-size: 1.5rem;
-  top: 30px;
-  left: 120px;
-
-}
-
 .logout{
   border-image: url(./images/goldborder.jpg);
   border-image-slice: 80;
   border-width:  1px ;
   position: fixed;
-  top: 30px;
+  top: 70;
   background-color: #101a30;
-  left: 150px;
+  left: 50;
   font-size: 1.2rem;
   color: wheat;
  padding-right: 35px;
@@ -1045,27 +1029,14 @@ body {
 @keyframes In {
   from {
     opacity: 0;
-    transform: translateX(-10%);
+    transform: translateY(-10%);
   }
+
   to {
     opacity: 1;
-    transform: translateX(0);
-  }
+    transform: translateY(0);
+  } 
 }
-
-@keyframes Out {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-10%);
-  }
-  
-}
-
-
 .notif {
   background: var(--gold);
   color: #3d2a2a;
@@ -1125,4 +1096,57 @@ body {
  padding: 20px;
   border-radius: 5px;
  
+}
+
+.cart-tit{
+  position: fixed;
+  top: 20;
+  left: 90;
+  font-size: 1.9rem;
+  color: rgb(247, 194, 97);
+}
+
+.fa-arrow-left{
+  position: fixed;
+  top: 30;
+  left: 50;
+  font-size: 1.5rem;
+  color: wheat;
+  
+}
+
+
+#menuDiv {
+  display: none;
+  position: fixed;
+  font-size: 1.5rem;
+  top: 30px;
+  
+}
+
+.welcomee{
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 80;
+  border-width:  0.5px ;
+  border-left-width: 11px;
+  border-right-width: 11px;
+  position: fixed;
+
+  top: 25;
+  background-color: #101a30;
+  left: 38.5%;
+  font-size: 1.2rem;
+  color: wheat;
+ padding-right: 35px;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 330px;
+  animation-duration: 1s;
+  animation-name: In; 
+}
+
+.fa-face-laugh-wink{
+  color: rgb(231, 182, 91);
+  padding-left: 5px;
 }

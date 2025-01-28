@@ -41,7 +41,7 @@
   --tw-drop-shadow: ;
   --tw-backdrop-blur: ;
   --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
+  --tw-bdrop-contrast: ;
   --tw-backdrop-grayscale: ;
   --tw-backdrop-hue-rotate: ;
   --tw-backdrop-invert: ;
@@ -739,9 +739,6 @@ body {
     margin-top: -31.8px;
 
   }
-
-
-
 }
 
 
@@ -759,11 +756,5 @@ body {
   margin-left: 85%;
 
   font-size: 1.5rem;
-
 }
 
-.fa-bars {
-  margin-left: 5%;
-  font-size: 1.5rem;
-  margin-top: 30px;
-}

@@ -5,10 +5,26 @@ let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
 let menuDiv = document.getElementById('menuDiv');
 
-
 let logout = document.getElementById('logoutLi');
+
+ let welcomeMassage = localStorage.getItem('welcomeMassage');
+    let welcome = document.getElementById('welcomMass');
+    
+    if (welcomeMassage) {
+        welcome.innerHTML = `${welcomeMassage} <i class="fa-solid fa-face-laugh-wink"></i> `;
+        welcome.classList.add('welcomee');
+       
+    }
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const loggedInUserKey = localStorage.getItem('loggedInUser');
+    // let welcome = document.getElementById('welcomMass');
+// welcome.innerHTML = "Welcome to manga store";
+// localStorage.setItem('welcomeMassage', welcome.innerHTML);
+
+     // console.log(localStorage.getItem('welcomeMassage '));
+
+const loggedInUserKey = localStorage.getItem('loggedInUser');
     if (!loggedInUserKey) {
 
         window.location.href = '../index.html';
@@ -19,6 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log('Logged in user:', user);
     }
 
+   
+    setInterval(() => {
+        localStorage.removeItem('welcomeMassage');
+        welcome.innerHTML = '';
+        welcome.classList.remove('welcomee');
+    }, 2000);
     fetched('https://api.jikan.moe/v4/manga', 1);
 
 });
