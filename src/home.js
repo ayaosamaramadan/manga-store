@@ -40,19 +40,21 @@ const loggedInUserKey = localStorage.getItem('loggedInUser');
         localStorage.removeItem('welcomeMassage');
         welcome.innerHTML = '';
         welcome.classList.remove('welcomee');
-    }, 2000);
-    fetched('https://api.jikan.moe/v4/manga', 1);
+    }, 5000);
+    fetched('https://api.jikan.moe/v4/manga');
 
 });
 
-const fetched = (url, page) => {
+const fetched = (url) => {
     showLoading();
-    fetch(`${url}?page=${page}`)
+    fetch(url)
         .then(response => response.json())
         .then(data => {
-            // console.log('Manga data:', data);
+            console.log('Manga data:', data);
             if (data.data) {
                 displaydata(data.data);
+                localStorage.setItem('mangaData', JSON.stringify(data.data));
+          
             } else {
                 console.error('No data found in response');
             }
@@ -106,6 +108,7 @@ cartDiv.addEventListener('click', function () {
     });
 
     const mangadiv = document.getElementById('manga-container');
+    mangadiv.innerHTML = '';
     mangadiv.classList.add('manga-container');
     listt.forEach(manga => {
 
@@ -178,3 +181,17 @@ logout.addEventListener('click', function () {
 }
 );
 
+
+const searchData = (query) => {
+    const mangaData = JSON.parse(localStorage.getItem('mangaData')) || [];
+    if (!query) {
+        displaydata(mangaData); 
+        return;
+    }
+    const filteredData = mangaData.filter(manga => {
+        const titleWords = manga.title.toLowerCase().split(' ');
+        const queryWords = query.toLowerCase().split(' ');
+        return queryWords.some(qWord => titleWords.some(tWord => tWord.includes(qWord)));
+    });
+    displaydata(filteredData);
+};

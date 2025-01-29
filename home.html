@@ -10,7 +10,9 @@
 </head>
 
 <body class="custome-imge">
-<h1 class="cart-tit">MANGA STORE</h1>
+
+  <div class="bg-black">
+    <h1 class="cart-tit">MANGA STORE</h1>
   <i class="fa-solid fa-bars" id="menu"></i>
   <p id="welcomMass"></p>
   <div id="menuDiv">
@@ -21,26 +23,36 @@
       </li>
     </ul>
   </div>
-  <!-- <input
+  <input
           type="text"
           id="search"
+          onkeyup="searchData(this.value)"
           placeholder="Search..."
-          class="text-w w-full max-w-md p-2 border-b-2 border-gray-400 bg-transparent focus:outline-none"
+          id="searchInput"
         />
         <button
+        type="submit"
         title="Search"
           id="searchBtn"
-          class="text-wheat"
+
         >
-          <i class="fas fa-magnifying-glass "></i> -->
+        </button>
+          <i class="fas fa-magnifying-glass"></i>
+
   <div id="cartDiv">
     <p class="" id="number-itemsPack"></p>
     <i class="fa-solid fa-cart-plus" id="cart"></i>
   </div>
 
 
+  </div>
+
+
   <div id="loading" class="loading">Loading...</div>
-  <div id="manga-container"></div>
+  <div class="content-manga">
+     <div id="manga-container"></div>
+  </div>
+ 
 
  
   <script src="./src/home.js"></script>

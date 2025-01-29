@@ -305,7 +305,7 @@ table {
 */
 
 button,
-input,
+
 optgroup,
 select,
 textarea {
@@ -488,21 +488,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
 
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
+
 
 /*
 Set the default cursor for buttons.
@@ -620,15 +607,17 @@ video {
 }
 
 input {
-  width: 100%;
+  position: fixed;
+  left: 40%;
+  top: 25px;
+  width: 270px;
   padding: 10px;
-  margin: 10px 0;
+  
   border-radius: 4px;
   border: 1px solid wheat;
   background-color: transparent;
   color: wheat;
-  margin-top: -8.5%;
-  padding-left: 13%;
+  padding-left: 2%;
 }
 
 input::placeholder {
@@ -738,19 +727,6 @@ body {
 
 
 }
-
-@media (max-width: 425px) {
-  input {
-
-    margin-top: -31.8px;
-
-  }
-
-
-
-}
-
-
 
 .fa-cart-plus {
   position: fixed;
@@ -880,6 +856,23 @@ body {
   transform: scale(0.99);
 }
 
+.bg-black {
+  position: fixed;
+  background-color: #040d1f7e;
+  width: 100%;
+  height: 13%;
+}
+
+.fa-magnifying-glass{
+  position: fixed;
+  top: -100px;
+  left: 57%;
+  color: wheat;
+  opacity: 0.7;
+}
+
+
+
 .manga-container { display: flex;
    display: flex;
     flex-wrap: wrap;
@@ -914,17 +907,12 @@ body {
     margin-left: 5%;
   margin-right: 60%;
   }
+
   
 }
-@media (max-width: 768px) {
-  .cartstyle {
-    
-    margin-left: 5%;
-  margin-right: 40%;
-  }
-  
-}
+
 @media (max-width: 425px) {
+ 
   .cartstyle {
     margin-left: 10%;
   margin-right: 10%;
@@ -936,8 +924,19 @@ body {
     height: 190px;
     margin-left: 0px;
   }
+
+
+}
+
+@media (max-width: 768px) {
+  .cartstyle {
+    
+    margin-left: 5%;
+  margin-right: 40%;
+  }
   
 }
+
 
 
 #total-p {
@@ -1149,4 +1148,8 @@ body {
 .fa-face-laugh-wink{
   color: rgb(231, 182, 91);
   padding-left: 5px;
+}
+
+.content-manga{
+  
 }
