@@ -67,7 +67,7 @@ const removecart = (index) => {
     if (loggedInUserKey) {
         const user = JSON.parse(localStorage.getItem(loggedInUserKey));
         const cartItem = user.cartItems[index];
-        const newcartitems = user.cartItems.filter((item, i) => i !== index);
+        const newcartitems = user.cartItems.filter((_, i) => i !== index);
         localStorage.setItem(loggedInUserKey, JSON.stringify({ ...user, cartItems: newcartitems }));
         document.getElementById(`cart-item-${index}`).remove();
 

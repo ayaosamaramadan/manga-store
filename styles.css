@@ -954,9 +954,11 @@ body {
   margin-right: 40%;
   }
   .welcomee {
-    left: 30%;
-    
+    width: 70%;
+    font-size: 0.9rem; 
+    top: 10px; 
   }
+
     
   
 }
@@ -982,7 +984,13 @@ body {
   
 }
 
-
+@media (max-width: 480px) {
+  .welcomee {
+    width: 100%; 
+    font-size: 0.8rem; 
+    top: 5px; 
+  }
+}
 
 
 
@@ -1029,7 +1037,7 @@ body {
   padding-right:8px;
  border-radius: 30px;
   border: 0.5px solid #ffffff41;
-  z-index: 2;
+  z-index: 4;
 }
 
 .fa-arrow-left:hover {
@@ -1164,6 +1172,11 @@ body {
     left: 20px;
   
   }
+  .welcomee {
+    width: 140%; 
+    font-size: 0.8rem; 
+    top: 5px; 
+  }
  
     #number-itemsPack{
     
@@ -1194,7 +1207,7 @@ font-size: 1.5rem;
   position: fixed;
   font-size: 1.5rem;
   top: 30px;
-  z-index: 1000;
+  z-index: 2;
 
   
 }
@@ -1202,23 +1215,37 @@ font-size: 1.5rem;
 .welcomee{
   border-image: url(./images/goldborder.jpg);
   border-image-slice: 80;
-  border-width:  0.5px ;
+  border-width: 0.5px;
   border-left-width: 11px;
   border-right-width: 11px;
-  position: fixed;
   z-index: 10000;
-  top: 25;
   background-color: #101a30;
-  left: 38.5%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: wheat;
- padding-right: 35px;
+  padding-right: 35px;
   padding: 20px;
   border-radius: 5px;
   cursor: pointer;
-  width: 330px;
-  animation-duration: 1s;
-  animation-name: In; 
+  width: 280px;
+animation-name: welc;
+animation-duration: 2s;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 65px;
+
+}
+
+@keyframes welc {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%);
+  } 
 }
 
 .fa-face-laugh-wink{
@@ -1239,7 +1266,7 @@ font-size: 1.5rem;
 }
 
 .navv {
-  z-index: 9999;
+  z-index: 2;
 }
 
 #next-btn{
@@ -1338,7 +1365,7 @@ font-size: 1.5rem;
     font-size: 1.5rem;
     margin-left: 10px;
     cursor: pointer;
-    z-index: 10000;
+    z-index:9999 ;
     top: 30px;
     right: 110px;
     font-size: 1.8rem;
