@@ -2,6 +2,7 @@ let totalpriceDiv = document.getElementById('total-p');
 let removeCart = document.getElementById('remove-cart');
 let totalPrice = 0;
 let back = document.getElementById('back-btn');
+let noItem = document.getElementById('no-item');
 
 let currItem = 0;
 
@@ -23,54 +24,75 @@ const notific = (massage) => {
 };
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    
     const loggedInUserKey = localStorage.getItem('loggedInUser');
     const user = JSON.parse(localStorage.getItem(loggedInUserKey));
     if (loggedInUserKey) {
         const cartitemsdiv = document.getElementById('cart-items');
-        user.cartItems.forEach((cartItem, index)=> {
+        user.cartItems.forEach((cartItem, index) => {
+             score = cartItem.score !== null ? cartItem.score : 8.04;
             const mangaincart = document.createElement('div');
             mangaincart.classList.add('cartstyle');
             mangaincart.setAttribute('id', `cart-item-${index}`);
             mangaincart.innerHTML = `
-                <img class="cartItem-img" src="${cartItem.images.jpg.image_url}" alt="${cartItem.title}">
-                <div class="cartItem-info">
+             <div >
                  <i class="fa-solid fa-x remove-cart"></i>
+                 </div>  
+                <img class="cartItem-img" src="${cartItem.images.jpg.image_url}" alt="${cartItem.title}">
+                 
+               <div class="cartItem-info">
                  <h3 class='cartItem-title'>${cartItem.title}</h3>
-                 <p class="cartItem-price text-wheat">$${cartItem.score}</p>
-            </div>
+                 <p class="cartItem-price text-wheat">$ ${score}</p>
+                 </div>
+                
                 `;
             const removeButton = mangaincart.querySelector('.remove-cart');
-            removeButton.addEventListener('click', () => {removecart(cartItem, index)});
-            totalPrice += cartItem.score;
+            removeButton.addEventListener('click', () => { removecart(cartItem, index) });
+            totalPrice += score;
             totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(2)}`;
             cartitemsdiv.appendChild(mangaincart);
-            currItem++; 
+            currItem++;
+            (currItem === 0) ? noItem.innerHTML = 'NO ITEM IN CART' : noItem.innerHTML = '';
         });
-    }
+    } 
 
 });
 
-(totalPrice===0)?totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`:totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
 
-const removecart = (cartItem, index) => {  
+(totalPrice === 0) ? totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}` : totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
+
+const removecart = (cartItem, index) => {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
     const user = JSON.parse(localStorage.getItem(loggedInUserKey));
 
     const newcartitems = user.cartItems.filter((item, i) => i !== index);
-    localStorage.setItem(loggedInUserKey, JSON.stringify({...user, cartItems: newcartitems}));
+    localStorage.setItem(loggedInUserKey, JSON.stringify({ ...user, cartItems: newcartitems }));
     document.getElementById(`cart-item-${index}`).remove();
-    totalPrice -= cartItem.score;
+     
+    const score = cartItem.score !== null ? cartItem.score : 8.04;
+            
+    totalPrice -= score;
     totalPrice = Math.max(0, totalPrice);
+
     
     totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice.toFixed(2)}`;
     currItem--;
-    if(currItem === 0){
-        totalpriceDiv.innerHTML = `TOTAL PRICE : $ ${totalPrice}`;
-    }
+if (currItem === 0) {
+    totalpriceDiv.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
+    noItem.innerHTML = 'NO ITEM IN CART';
+}
     notific('Item removed from cart');
+
+    
 }
 
-back.addEventListener('click', function() {
-    history.back();
+back.addEventListener('click', function () {
+    window.location.href = '../home.html';
+   
 });
+
+if (currItem === 0) {
+        noItem.innerHTML = 'NO ITEM IN CART';
+}
+

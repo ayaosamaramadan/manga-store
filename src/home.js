@@ -41,13 +41,15 @@ const loggedInUserKey = localStorage.getItem('loggedInUser');
         welcome.innerHTML = '';
         welcome.classList.remove('welcomee');
     }, 5000);
-    fetched('https://api.jikan.moe/v4/manga');
+    fetched('https://api.jikan.moe/v4/manga', 1);
 
 });
 
-const fetched = (url) => {
+const fetched = (url ,page,query = '') => {
     showLoading();
-    fetch(url)
+       const apiUrl= query? `${url}?page=${page}&q=${query}&sfw=true`: `${url}?page=${page}&sfw=true`;
+   
+    fetch( apiUrl)
         .then(response => response.json())
         .then(data => {
             console.log('Manga data:', data);
@@ -111,7 +113,8 @@ cartDiv.addEventListener('click', function () {
     mangadiv.innerHTML = '';
     mangadiv.classList.add('manga-container');
     listt.forEach(manga => {
-
+        const score = manga.score !== null ? manga.score : 8.04;
+   
         const themanga = document.createElement('div');
         themanga.setAttribute('class', 'manga');
         themanga.classList.add('mangastyle');
@@ -119,7 +122,7 @@ cartDiv.addEventListener('click', function () {
            <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title}">
             <h3 class='manga-title'>${manga.title}</h3>
             <p class="manga-synopsis">${limited(manga.synopsis, 10)}</p>
-            <p class="manga-price text-wheat">$${manga.score}</p>
+            <p class="manga-price text-wheat">$ ${score}</p>
             <button class="add-to-cart" id="${manga.mal_id}">Add To Cart</button>
             `;
 
@@ -158,6 +161,7 @@ cartDiv.addEventListener('click', function () {
 };
 
 const limited = (text, limitt) => {
+    if (!text) return '';
     const words = text.split(' ');
 
 
@@ -183,15 +187,11 @@ logout.addEventListener('click', function () {
 
 
 const searchData = (query) => {
-    const mangaData = JSON.parse(localStorage.getItem('mangaData')) || [];
-    if (!query) {
-        displaydata(mangaData); 
-        return;
-    }
-    const filteredData = mangaData.filter(manga => {
-        const titleWords = manga.title.toLowerCase().split(' ');
-        const queryWords = query.toLowerCase().split(' ');
-        return queryWords.some(qWord => titleWords.some(tWord => tWord.includes(qWord)));
+    fetched('https://api.jikan.moe/v4/manga', 1, query);
+    const data = JSON.parse(localStorage.getItem('mangaData'));
+    const filteredData = data.filter(manga => {
+        return manga.title.toLowerCase().includes(query.toLowerCase());
     });
     displaydata(filteredData);
+
 };
