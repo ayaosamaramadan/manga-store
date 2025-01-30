@@ -1130,19 +1130,19 @@ body {
 
 .loading {
   display: none;
-  position:fixed;
-  top:50%;
-    left: 45%;  
-   border-image: url(./images/goldborder.jpg);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-image: url(./images/goldborder.jpg);
   border-image-slice: 80;
-  border-width:  1px ;
+  border-width: 1px;
   background-color: #101a30;
-  
   font-size: 1.2rem;
   color: wheat;
- padding: 20px;
+  padding: 20px;
   border-radius: 5px;
- 
+
 }
 
 .cart-tit{
@@ -1254,7 +1254,7 @@ font-size: 1.5rem;
   font-size: 1.5rem;
   bottom: 25px;
   left: 20px;
-  
+
 }
 
 #next-btn:hover{

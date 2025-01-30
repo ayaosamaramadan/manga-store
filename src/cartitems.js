@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currItem++;
         });
 
-        const totalPriceElement = document.getElementById('total-price');
+        const totalPriceElement = document.getElementById('total-p');
         totalPriceElement.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
 
         if (currItem === 0) {
@@ -75,13 +75,13 @@ const removecart = (index) => {
         totalPrice -= score;
         totalPrice = Math.max(0, totalPrice); 
 
-        const totalPriceElement = document.getElementById('total-price');
-        // totalPriceElement.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
+        const totalPriceElement = document.getElementById('total-p');
+        totalPriceElement.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
 
         currItem--;
         if (currItem === 0) {
             totalPriceElement.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
-            document.getElementById('no-item').innerHTML = 'NO ITEM IN CART';
+            noitem.innerHTML = 'NO ITEM IN CART';
         }
 
         notific('Item removed from cart');

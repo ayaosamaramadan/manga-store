@@ -1,6 +1,6 @@
 let next= document.getElementById('next-btn');
 let pre = document.getElementById('pre-btn');
-
+let curr = 1;
 let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
@@ -119,21 +119,38 @@ cartDiv.addEventListener('click', function () {
         const themanga = document.createElement('div');
         themanga.setAttribute('class', 'manga');
         themanga.classList.add('mangastyle');
+        themanga.setAttribute('id', `${manga.mal_id}`);
+       
         themanga.innerHTML = `
-           <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title}">
-            <h3 class='manga-title'>${manga.title}</h3>
+        
+           <img class="mangaimg" src="${manga.images.jpg.image_url}" alt="${manga.title} id="${manga.images}">
+            <h3 class='manga-title'>${manga.title}</h3> 
+            
             <p class="manga-synopsis">${limited(manga.synopsis, 10)}</p>
             <p class="manga-price text-wheat">$ ${score}</p>
-            <button class="add-to-cart" id="${manga.mal_id}">Add To Cart</button>
+           
+            <button class="add-to-cart" id="add-to-cart-${manga.mal_id}">Add To Cart</button>
             `;
 
         mangadiv.appendChild(themanga);
+        const goTomangoo = document.getElementById(`${manga.mal_id}`);
+        // console.log(goTomangoo);
 
-        let selectedManga = document.getElementById(`${manga.mal_id}`);
+
+        if (goTomangoo) {
+            goTomangoo.addEventListener('click', function () {
+                localStorage.setItem('manga', JSON.stringify(manga));
+                window.location.href = '../manga.html';
+            });
+        }
+        
+
+        let selectedManga = document.getElementById(`add-to-cart-${manga.mal_id}`);
 
 
-        selectedManga.addEventListener('click', function () {
-            const loggedInUserKey = localStorage.getItem('loggedInUser');
+        selectedManga.addEventListener('click', function (event) {
+               event.stopPropagation() ;
+            const loggedInUserKey= localStorage.getItem('loggedInUser');
             if (loggedInUserKey) {
                 const user = JSON.parse(localStorage.getItem(loggedInUserKey));
                 if (!user.cartItems) {
@@ -161,6 +178,9 @@ cartDiv.addEventListener('click', function () {
 
 };
 
+// const goTomango = (goTomangoo, manga) => {
+  
+// };
 const limited = (text, limitt) => {
     if (!text) return '';
     const words = text.split(' ');
@@ -196,19 +216,24 @@ const searchData = (query) => {
     displaydata(filteredData);
 
 };
- let curr = 1;
 
- next.addEventListener('click', () => {
+
+
+ next.addEventListener('click', (event) => {
+    event.preventDefault();
     curr++;
     fetched("https://api.jikan.moe/v4/manga", curr);
 }
 
 );
 
-pre.addEventListener('click', () => {
+pre.addEventListener('click', (event) => {
+    event.preventDefault();
     if (curr > 1) {
         curr--;
         fetched("https://api.jikan.moe/v4/manga", curr);
     }
+   
 }
-);
+); 
+
