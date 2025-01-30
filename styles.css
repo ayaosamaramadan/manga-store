@@ -1163,7 +1163,8 @@ body {
 @media (max-width:417px) {
   .cart-tit{
     margin-left: -45px;
-    font-size: 1.5rem;
+    margin-top: 3px;
+    font-size: 1.2rem;
   }
   .fa-bars {
     position: fixed;
@@ -1191,6 +1192,12 @@ top: 25px;
 right: 40px;
 font-size: 1.5rem;
   }
+#wishlist {
+  position: fixed;
+  top: 25px;
+  right: 90px;
+  font-size: 1.5rem;
+}
 }
 
 .fa-arrow-left{
@@ -1360,13 +1367,63 @@ animation-duration: 2s;
   }
 
   .fa-gratipay{
-    color: wheat;
     position: fixed;
-    font-size: 1.5rem;
-    margin-left: 10px;
-    cursor: pointer;
-    z-index:9999 ;
     top: 30px;
-    right: 110px;
-    font-size: 1.8rem;
+    right: 120px;
+    font-size: 1.6rem;
+    z-index:9999 ;
+    color: wheat;
+   
+  }
+
+  .fav-manga-item {
+    display: flex;
+ 
+  
+    background-color: #101a30;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    color: wheat;
+  }
+
+  .fav-manga-img img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .fav-manga-info {
+  
+  }
+
+  .fav-manga-title {
+    display: flex;
+    align-items: center;
+  
+  }
+
+  .fav-manga-title i {
+    cursor: pointer;
+    color: rgb(165, 9, 9);
+  }
+
+  .add-cart-wishlis {
+    background-image: url(./images/goldborder.jpg);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+     }
+
+  .add-cart-wishlis:hover {
+    background-color: #3f3939;
+  }
+
+  .fav-mang-sco {
+    font-size: 1rem;
+    color: #ffcc00;
   }

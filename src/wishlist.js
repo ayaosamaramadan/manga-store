@@ -3,6 +3,7 @@ let user = JSON.parse(localStorage.getItem(storeddata));
 let back = document.getElementById('back-btn');
 let numberitems = document.getElementById('number-itemsPack');
 let favmanga = document.getElementById('fav-manga');
+let cartDiv= document.getElementById('cartDiv');
 
 const notific = (massage) => {
     let notif = document.createElement("div");
@@ -22,35 +23,22 @@ const notific = (massage) => {
 };
 
 
-if (user && user.cartItems) {
-    const itemNumber = user.cartItems.length;
-    numberitems.innerHTML = itemNumber;
-} else {
-    numberitems.innerHTML = 0;
-}
-
-
-back.addEventListener('click', function () {
-    window.location.href = '../home.html';
-}
-);
-
 if (favmanga && user && user.wishlist) {
-    user.wishlist.forEach((manga , index) => {
+    user.wishlist.forEach((manga, index) => {
         let favmangaDiv = document.createElement('div');
-
+favmangaDiv.setAttribute('class', 'fav-manga-item');
         favmangaDiv.setAttribute('id', `wishlist-item-${index}`);
         favmangaDiv.innerHTML = `
         <div>
-            <div>
-                <img src="${manga.images.jpg.image_url}" alt="${manga.title}">
+            <div class="fav-manga-img">
+                <img src="${manga.images.jpg.image_url}" alt="${manga.title} class="mangaimg">
             </div>
-            <div>
-                <div>
+            <div class="fav-manga-info">
+                <div class="fav-manga-title">
                     <h3>${manga.title}</h3>
                     <i class="fa-solid fa-heart" id="heartInWishlist"></i>
                 </div>
-                <p>${manga.score}</p>
+                <p class="fav-mang-sco">${manga.score}</p>
             </div>
             <button class="add-cart-wishlis" id="add-to-cart-${manga.mal_id}">Add To Cart</button>
         </div>
@@ -58,66 +46,51 @@ if (favmanga && user && user.wishlist) {
         favmanga.appendChild(favmangaDiv);
 
         const removeButton = favmangaDiv.querySelector('.fa-heart');
-        removeButton.addEventListener('click', () => { 
+        removeButton.addEventListener('click', () => {
             const index = user.wishlist.indexOf(manga);
             remove(index);
         });
 
-    
+        let selectedManga = document.getElementById(`add-to-cart-${manga.mal_id}`);
+        selectedManga.addEventListener('click', function () {
 
-  let selectedManga = document.getElementById(`add-to-cart-${manga.mal_id}`);
-  selectedManga.addEventListener('click', function () {
-  
- const loggedInUserKey= localStorage.getItem('loggedInUser');
- if (loggedInUserKey) {
-     const user = JSON.parse(localStorage.getItem(loggedInUserKey));
-     if (!user.wishlist) {
-         user.wishlist = [];
-     }
-     user.wishlist.push(manga);
-     localStorage.setItem(loggedInUserKey, JSON.stringify(user));
-     notific("Item added to cart");
-  
- }
-
-});
-const loggedInUserKey = localStorage.getItem('loggedInUser');
-if (loggedInUserKey) {
- const user = JSON.parse(localStorage.getItem(loggedInUserKey));
- if (!user.wishlist) {
-     user.wishlist = [];
- }
-
+            const loggedInUserKey = localStorage.getItem('loggedInUser');
+            if (loggedInUserKey) {
+                const user = JSON.parse(localStorage.getItem(loggedInUserKey));
+                if (!user.cartItems) {
+                    user.cartItems = [];
+                }
+                user.cartItems.push(manga);
+                localStorage.setItem(loggedInUserKey, JSON.stringify(user));
+                notific("Item added to cart");
+                const itemNumber = user.cartItems.length;
+                numberitems.innerHTML = itemNumber;
+        
+            }
+        });
+        if (user && user.cartItems) {
+            const itemNumber = user.cartItems.length;
+            numberitems.innerHTML = itemNumber;
+        } else {
+            numberitems.innerHTML = 0;
+        }
+        
+    });
 }
-
-}
-
-
-);
-
-
-
-
-
-
-}
-
 
 const remove = (index) => {
     const loggedInUserKey = localStorage.getItem('loggedInUser');
     if (loggedInUserKey) {
         const user = JSON.parse(localStorage.getItem(loggedInUserKey));
-       
+
         const newwishlist = user.wishlist.filter((_, i) => i !== index);
         localStorage.setItem(loggedInUserKey, JSON.stringify({ ...user, wishlist: newwishlist }));
         document.getElementById(`wishlist-item-${index}`).remove();
-
-    
         notific('Item removed from cart');
-
-                updateremove();
+        updateremove();
     }
 }
+
 const updateremove = () => {
     const cartItems = document.querySelectorAll('.cartstyle');
     cartItems.forEach((item, index) => {
@@ -126,3 +99,12 @@ const updateremove = () => {
         removeButton.onclick = () => removecart(index);
     });
 };
+
+cartDiv.addEventListener('click', function () {
+    window.location.href ='../cartitems.html';
+});
+
+back.addEventListener('click', function () {
+    window.location.href = '../home.html';
+}
+);
