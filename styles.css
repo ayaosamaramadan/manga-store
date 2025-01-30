@@ -1241,3 +1241,26 @@ font-size: 1.5rem;
 .navv {
   z-index: 9999;
 }
+
+#next-btn{
+  position: fixed;
+  font-size: 1.5rem;
+  bottom: 25px;
+  right: 20px;
+}
+
+#pre-btn{
+  position: fixed;
+  font-size: 1.5rem;
+  bottom: 25px;
+  left: 20px;
+  
+}
+
+#next-btn:hover{
+  transform: scale(1.1);
+}
+
+#pre-btn:hover{
+  transform: scale(1.1);
+}

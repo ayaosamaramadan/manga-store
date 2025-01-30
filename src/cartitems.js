@@ -106,3 +106,4 @@ back.addEventListener('click', function () {
 if (currItem === 0) {
     document.getElementById('no-item').innerHTML = 'NO ITEM IN CART';
 }
+

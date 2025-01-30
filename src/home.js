@@ -1,4 +1,5 @@
-
+let next= document.getElementById('next-btn');
+let pre = document.getElementById('pre-btn');
 
 let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
@@ -195,3 +196,19 @@ const searchData = (query) => {
     displaydata(filteredData);
 
 };
+ let curr = 1;
+
+ next.addEventListener('click', () => {
+    curr++;
+    fetched("https://api.jikan.moe/v4/manga", curr);
+}
+
+);
+
+pre.addEventListener('click', () => {
+    if (curr > 1) {
+        curr--;
+        fetched("https://api.jikan.moe/v4/manga", curr);
+    }
+}
+);
