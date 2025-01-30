@@ -5,7 +5,7 @@ let numberitems = document.getElementById('number-itemsPack');
 let back = document.getElementById('back-btn');
 let menu = document.getElementById('menu');
 let menuDiv = document.getElementById('menuDiv');
-
+let wishlist = document.getElementById('wishlist');
 let logout = document.getElementById('logoutLi');
 
  let welcomeMassage = localStorage.getItem('welcomeMassage');
@@ -16,7 +16,6 @@ let logout = document.getElementById('logoutLi');
         welcome.classList.add('welcomee');
        
     }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     // let welcome = document.getElementById('welcomMass');
@@ -32,11 +31,9 @@ const loggedInUserKey = localStorage.getItem('loggedInUser');
     } else {
 
         const user = JSON.parse(localStorage.getItem(loggedInUserKey));
-
         // console.log('Logged in user:', user);
     }
 
-   
     setInterval(() => {
         localStorage.removeItem('welcomeMassage');
         welcome.innerHTML = '';
@@ -49,7 +46,7 @@ const loggedInUserKey = localStorage.getItem('loggedInUser');
 const fetched = (url ,page,query = '') => {
     showLoading();
        const apiUrl= query? `${url}?page=${page}&q=${query}&sfw=true`: `${url}?page=${page}&sfw=true`;
-   
+
     fetch( apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -237,3 +234,7 @@ pre.addEventListener('click', (event) => {
 }
 ); 
 
+
+wishlist.addEventListener('click', function () {
+    window.location.href = '../wishlist.html';
+});

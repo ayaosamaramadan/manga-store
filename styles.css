@@ -1264,3 +1264,82 @@ font-size: 1.5rem;
 #pre-btn:hover{
   transform: scale(1.1);
 }
+
+.manga-details{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 100px;
+
+  text-align: left;
+  color: wheat;
+  font-size: 1.2rem;
+}
+
+.manga-details img{
+  border: 2px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  margin-left: 10px;
+}
+
+.manga-details p{
+  color: #d3d3d3;
+  font-size: 1rem;
+  margin: 10px;
+  text-align: justify;
+}
+
+.manga-details h3{
+  color: wheat;
+  font-size: 1.5rem;
+
+  text-align: left;
+}
+
+  .themanga-info{
+    margin-left: 50px;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .fa-heart{
+    color: wheat;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .fa-heart:hover{
+    transform: scale(1.1);
+  }
+
+  .manga-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    color: wheat;
+    font-size: 1.2rem;
+  }
+
+  .nav-mangoo{
+  top: 0;
+  }
+
+  .fa-gratipay{
+    color: wheat;
+    position: fixed;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+    z-index: 10000;
+    top: 30px;
+    right: 110px;
+    font-size: 1.8rem;
+  }
