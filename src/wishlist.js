@@ -26,23 +26,33 @@ const notific = (massage) => {
 if (favmanga && user && user.wishlist) {
     user.wishlist.forEach((manga, index) => {
         let favmangaDiv = document.createElement('div');
-favmangaDiv.setAttribute('class', 'fav-manga-item');
+favmangaDiv.setAttribute('class', 'cart-style');
         favmangaDiv.setAttribute('id', `wishlist-item-${index}`);
         favmangaDiv.innerHTML = `
         <div>
-            <div class="fav-manga-img">
-                <img src="${manga.images.jpg.image_url}" alt="${manga.title} class="mangaimg">
+               <img src="${manga.images.jpg.image_url}" alt="${manga.title} class="mangaimg">
             </div>
             <div class="fav-manga-info">
                 <div class="fav-manga-title">
                     <h3>${manga.title}</h3>
-                    <i class="fa-solid fa-heart" id="heartInWishlist"></i>
-                </div>
-                <p class="fav-mang-sco">${manga.score}</p>
+                    </div>
+                <p class="fav-mang-sco">$ ${manga.score}</p>
             </div>
+            <div class="fav-manga-btn">
             <button class="add-cart-wishlis" id="add-to-cart-${manga.mal_id}">Add To Cart</button>
+              <i class="fa-solid fa-heart" id="heartInWishlist"></i>
+               
+           </div>
         </div>
-        `;
+
+
+           
+              
+        `;  // <img class="cartItem-img" src="${cartItem.images.jpg.image_url}" alt="${cartItem.title}">
+                // <div class="cartItem-info">
+                //     <h3 class='cartItem-title'>${cartItem.title}</h3>
+                //     <p class="cartItem-price text-wheat">$${score}</p>
+                // </div>
         favmanga.appendChild(favmangaDiv);
 
         const removeButton = favmangaDiv.querySelector('.fa-heart');

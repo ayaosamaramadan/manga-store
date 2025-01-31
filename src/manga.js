@@ -2,8 +2,8 @@ let back = document.getElementById('back-btn');
 let numberitems = document.getElementById('number-itemsPack');
 let mangacontainer = document.getElementById('themanga');
 let cartDiv= document.getElementById('cartDiv');
-
 let wishlist = document.getElementById('wishlist');
+
 back.addEventListener('click', function () {
     window.location.href = '../home.html';
 });
@@ -19,16 +19,6 @@ if (user && user.cartItems) {
 } else {
     numberitems.innerHTML = 0;
 }
-
-// const limited = (text) => {
-//     if (!text) return '';
-//     const words = text.split(' ');
-
-//     if (words.length > 10) {
-//         return words.slice(0, 10).join(' ') + '... READ MORE';
-//     }
-//     return text;
-// };
 
 let themanga = document.createElement('div');
 themanga.innerHTML = `
@@ -59,10 +49,6 @@ themanga.innerHTML = `
 mangacontainer.appendChild(themanga);
 let heart= document.getElementById('heart1');
 
-
-
-
-
 if (heart) {
 heart.addEventListener('click', function () {
     let storeddata = localStorage.getItem('loggedInUser');
@@ -80,14 +66,9 @@ heart.addEventListener('click', function () {
         if (!user.wishlist.some(mang => mang.mal_id === manga.mal_id)) 
             {user.wishlist.push(manga);
             localStorage.setItem(storeddata, JSON.stringify(user));
-        }
-
-
-    
-            
+        }      
     }
-    
-    
+     
     else if(heart.classList.contains('fa-solid')) {
         heart.classList.remove('fa-solid');
         heart.classList.add('fa-regular');
@@ -98,7 +79,6 @@ heart.addEventListener('click', function () {
     }
 });
 }
-
 
 if (user.wishlist && user.wishlist.some(mang => mang.mal_id === manga.mal_id)) {
     heart.classList.remove('fa-regular');

@@ -728,9 +728,31 @@ body {
   
 }
 @media (max-width: 320px) {
- 
+  
+
   .cartstyle{
     width: 90%;  
+  }
+
+  .fav-manga-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+   
+  }
+
+  .fav-manga-info {
+    font-size: 0.8rem;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+ 
+
+  .add-cart-wishlis {
+    font-size: 0.8rem;
+    width: 75%;
+    
   }
   
 }
@@ -745,6 +767,7 @@ body {
  #back-btn{position: fixed;
   font-size: 1.5rem;
   top: 25px;
+  z-index: 2;
   left: 20px;}
   
 
@@ -821,8 +844,8 @@ body {
 }
 
 .cartItem-title {
-  color: #d10e0e;
-  font-size: 1.2rem;
+  color: wheat;
+  font-size: 1.3rem;
   margin: 10px 0;
 
 }
@@ -947,24 +970,13 @@ body {
 
 }
 
-@media (max-width: 768px) {
-  .cartstyle {
-    
-    margin-left: 5%;
-  margin-right: 40%;
-  }
-  .welcomee {
-    width: 70%;
-    font-size: 0.9rem; 
-    top: 10px; 
-  }
-
-    
-  
-}
 
 
 @media (max-width: 840px) {
+  .bg-black {
+  
+    height: 12%;
+  }
   input {
 
     left: 50%;
@@ -990,6 +1002,26 @@ body {
     font-size: 0.8rem; 
     top: 5px; 
   }
+  .fav-manga-item {
+    padding: 5px;
+    width: 50%;
+  }
+
+  .fav-manga-img img {
+    width: 60px;
+  }
+
+  .fav-manga-info {
+    font-size: 0.9rem;
+  }
+
+  .fav-manga-title {
+    font-size: 1rem;
+  }
+
+  .add-cart-wishlis {
+    font-size: 0.9rem;
+  }
 }
 
 
@@ -1004,6 +1036,7 @@ body {
   margin-top: 5px;
   font-size: 1.3rem;
   color: wheat;
+ 
 }
 
 
@@ -1014,7 +1047,7 @@ body {
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 100px;
-  
+  margin-right: 15px;
   cursor: pointer;
   position: relative;
 }
@@ -1187,6 +1220,7 @@ body {
     
     
   }
+ 
   .fa-cart-plus{
 top: 25px;
 right: 40px;
@@ -1376,54 +1410,105 @@ animation-duration: 2s;
    
   }
 
-  .fav-manga-item {
-    display: flex;
+.fav-manga-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #101a30;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  color: wheat;
+}
+
+.fav-manga-img img {
+  width: 100px;
+
+  margin-left: 10px;
+  height: auto;
+  
+}
+
+.fav-manga-info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.fav-manga-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+ 
+}
+.fav-manga-btn {
+  
+}
+
+
+.fav-manga-btn i {
  
   
-    background-color: #101a30;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    color: wheat;
+  cursor: pointer;
+  color: rgb(170, 0, 0);
+  font-size: 1.5rem;
+  margin-top: 15%;
+  margin-left: 50%;
+}
+
+.add-cart-wishlis {
+border: 1px solid wheat;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 50px;
+
+}
+
+.add-cart-wishlis:hover {
+  transform: scale(0.99);
+}
+
+.fav-mang-sco {
+ 
+  color: #b99400;
+  font-size: 1.1rem;
+}
+ 
+.cart-style{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid wheat;
+  border-image: url(./images/goldborder.jpg);
+  border-image-slice: 30;
+  margin-top: 100px;
+  margin-bottom: -90px;
+  transform: translateX(0%);
+  color: wheat;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+
+@media (max-width: 768px) {
+  .cart-style {
+    width: 100%;
+  }
+  .cartstyle {
+    
+    margin-left: 5%;
+  margin-right: 40%;
+  }
+  .welcomee {
+    width: 70%;
+    font-size: 0.9rem; 
+    top: 10px; 
   }
 
-  .fav-manga-img img {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
-  }
-
-  .fav-manga-info {
-  
-  }
-
-  .fav-manga-title {
-    display: flex;
-    align-items: center;
-  
-  }
-
-  .fav-manga-title i {
-    cursor: pointer;
-    color: rgb(165, 9, 9);
-  }
-
-  .add-cart-wishlis {
-    background-image: url(./images/goldborder.jpg);
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    display: flex;
-     }
-
-  .add-cart-wishlis:hover {
-    background-color: #3f3939;
-  }
-
-  .fav-mang-sco {
-    font-size: 1rem;
-    color: #ffcc00;
-  }
+    
+}
