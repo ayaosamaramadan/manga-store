@@ -8,7 +8,8 @@ let menuDiv = document.getElementById('menuDiv');
 let wishlist = document.getElementById('wishlist');
 let logout = document.getElementById('logoutLi');
 
- let welcomeMassage = localStorage.getItem('welcomeMassage');
+
+let welcomeMassage = localStorage.getItem('welcomeMassage');
     let welcome = document.getElementById('welcomMass');
     
     if (welcomeMassage) {
@@ -197,9 +198,28 @@ menu.addEventListener('click', function () {
     }
 });
 
+let islogout = document.getElementById('divlogout');
+let yes = document.getElementById('yes');
+let no = document.getElementById('no');
+
 logout.addEventListener('click', function () {
+    islogout.style.display = 'block';
+    // localStorage.removeItem('loggedInUser');
+    // window.location.href = './index.html';
+}
+);
+
+yes.addEventListener('click', function () {
     localStorage.removeItem('loggedInUser');
-    window.location.href = './index.html';
+    window.location.href = '../index.html';
+    
+
+}
+);
+
+no.addEventListener('click', function () {
+    islogout.style.display = 'none';
+    menuDiv.style.display = 'none';
 }
 );
 

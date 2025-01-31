@@ -7,7 +7,7 @@ let cartDiv= document.getElementById('cartDiv');
 
 const notific = (massage) => {
     let notif = document.createElement("div");
-    notif.setAttribute("class", "notif show");
+    notif.setAttribute("class", "wish-notific notif show");
     let p = document.createElement("p");
     p.setAttribute("class", "notif-p");
     p.innerHTML = `<i class="fa-solid fa-check success"></i>  ${massage}`;
@@ -39,9 +39,9 @@ favmangaDiv.setAttribute('class', 'cart-style');
                 <p class="fav-mang-sco">$ ${manga.score}</p>
             </div>
             <div class="fav-manga-btn">
-            <button class="add-cart-wishlis" id="add-to-cart-${manga.mal_id}">Add To Cart</button>
-              <i class="fa-solid fa-heart" id="heartInWishlist"></i>
-               
+           <i class="fa-solid fa-heart" id="heartInWishlist"></i>
+                <button class="add-cart-wishlis" id="add-to-cart-${manga.mal_id}">Add To Cart</button>
+              
            </div>
         </div>
 

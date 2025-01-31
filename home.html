@@ -10,52 +10,50 @@
 </head>
 
 <body class="custome-imge">
+
+  <div id="divlogout">
+    <img src="./images/sad-face-spongebob.gif" alt="">
+    <h1>Are you sure you want to logout?</h1>
+    <button id="yes">Yes, Logout</button>
+    <button id="no">Cancel</button>
+  </div>
+
   <i class="fa-brands fa-gratipay" id="wishlist"></i>
   <div class="bg-black navv">
     <h1 class="cart-tit">MANGA STORE</h1>
-  <i class="fa-solid fa-bars" id="menu"></i>
-  <p id="welcomMass"></p>
-  <div id="menuDiv">
-    <ul class="text-wheat logout">
-      <li class="flex" id="logoutLi">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        <p>Logout</p>
-      </li>
-    </ul>
-  </div>
-  <input
-          type="text"
-          id="search"
-          onkeyup="searchData(this.value)"
-          placeholder="Search more manga ..."
-          id="searchInput"
-        />
-        <button
-        type="submit"
-        title="Search"
-          id="searchBtn"
+    <i class="fa-solid fa-bars" id="menu"></i>
+    <p id="welcomMass"></p>
+    <div id="menuDiv">
+      <ul class="text-wheat logout">
+        <li class="flex" id="logoutLi">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <p>Logout</p>
+        </li>
+      </ul>
+    </div>
+    <input type="text" id="search" onkeyup="searchData(this.value)" placeholder="Search more manga ..."
+      id="searchInput" />
+    <button type="submit" title="Search" id="searchBtn">
+    </button>
 
-        >
-        </button>
-         
-  <div id="cartDiv">
-    <p class="" id="number-itemsPack"></p>
-    <i class="fa-solid fa-cart-plus" id="cart"></i>
-  </div>
+    <div id="cartDiv">
+      <p class="" id="number-itemsPack"></p>
+      <i class="fa-solid fa-cart-plus" id="cart"></i>
+    </div>
 
 
   </div>
- 
+
   <div id="loading" class="loading">Loading...</div>
   <div class="content-manga">
-     <div id="manga-container"></div>
+    <div id="manga-container"></div>
   </div>
- 
-<div>
-  <button type="button" title="next-btn" id="next-btn"><i class="fa-solid fa-circle-right"></i></button>
-  <button type="button" title="pre-btn" id="pre-btn"><i class="fa-solid fa-circle-left"></i></button>
-</div>
- 
+
+  <div>
+    <button type="button" title="next-btn" id="next-btn"><i class="fa-solid fa-circle-right"></i></button>
+    <button type="button" title="pre-btn" id="pre-btn"><i class="fa-solid fa-circle-left"></i></button>
+  </div>
+
   <script src="./src/home.js"></script>
 </body>
 
