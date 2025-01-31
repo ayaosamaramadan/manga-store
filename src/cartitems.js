@@ -20,7 +20,7 @@ const notific = (message) => {
         setTimeout(() => {
             notif.remove();
         }, 300);
-    }, 6000);
+    }, 3000);
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -81,13 +81,13 @@ const removecart = (index) => {
         currItem--;
         if (currItem === 0) {
             totalPriceElement.innerHTML = `TOTAL PRICE: $${totalPrice.toFixed(2)}`;
-            noitem.innerHTML = 'NO ITEM IN CART';
+            document.getElementById('no-item').innerHTML = 'NO ITEM IN CART';
         }
 
         notific('Item removed from cart');
 
                 updateremove();
-    }
+    } 
 };
 
 const updateremove = () => {
@@ -103,7 +103,4 @@ back.addEventListener('click', function () {
     window.location.href = '../home.html';
 });
 
-if (currItem === 0) {
-    document.getElementById('no-item').innerHTML = 'NO ITEM IN CART';
-}
 
