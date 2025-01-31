@@ -750,7 +750,7 @@ body {
     padding: 5px;
    
   }
-
+ 
   .fav-manga-info {
     font-size: 0.8rem;
     margin-left: 0;
@@ -1284,7 +1284,7 @@ animation-duration: 2s;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 65px;
+  top: 75px;
 
 }
 
@@ -1520,9 +1520,9 @@ border: 1px solid wheat;
   margin-right: 40%;
   }
   .welcomee {
-    width: 70%;
+    width: 85%;
     font-size: 0.9rem; 
-    top: 10px; 
+    top: 70px;
   }
 
     
