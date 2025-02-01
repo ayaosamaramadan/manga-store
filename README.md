@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/3e3cd44d-ea00-49d4-84b3-582d0794d19a
 
 <h2>🖥️ Large Device Screen</h2>
 <p>
-  How the landing page appears on large devices such as
+  How the app appears on large devices such as
   desktops and laptops.
 </p>
 <br/>
@@ -49,7 +49,7 @@ https://github.com/user-attachments/assets/3e3cd44d-ea00-49d4-84b3-582d0794d19a
 
 <h2>💻 Medium Device Screen</h2>
 <p>
-  This demonstrates how the landing page appears on medium devices such as
+  This demonstrates how app appears on medium devices such as
   tablets.
 </p>
 <br/>
@@ -59,7 +59,7 @@ https://github.com/user-attachments/assets/3e3cd44d-ea00-49d4-84b3-582d0794d19a
 
 <h2>📱 Small Device Screen</h2>
   <p>
-  This demonstrates how the landing page appears on small devices such as
+  This demonstrates how app appears on small devices such as
   smartphones.
 </p>
 <br/>
