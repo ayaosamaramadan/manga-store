@@ -590,19 +590,6 @@ video {
   background-size: cover;
 }
 
-.logincontainer {
-  display: block;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid rgb(230, 191, 120);
-  padding: 10px;
-  width: 400px;
-  height: 550px;
-  border-radius: 10px;
-  height: 70%;
-}
-
 :root {
   --gold: linear-gradient(90deg, rgba(135, 109, 11, 1) 0%, rgba(255, 234, 156, 0.927608543417367) 48%, rgba(217, 173, 13, 1) 100%);
 }
@@ -643,13 +630,6 @@ input:-webkit-autofill {
 
 .login-btn:hover {
   transform: scale(0.99);
-}
-
-.login-header {
-  text-align: left;
-  color: wheat;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .fas {
@@ -730,14 +710,7 @@ body {
   background-attachment: fixed;
 }
 
-@media (max-width: 375px) {
-  .logincontainer {
-    width: 90%;
-    height: 70%;
-  }
 
-  
-}
 @media (max-width: 320px) {
   
   .cartstyle{
@@ -770,10 +743,7 @@ body {
 
 
 @media (max-width: 425px) and (min-width: 320px) {
-  .logincontainer {
-    width: 90%;
-    height: 70%;
-  }
+
  #back-btn{position: fixed;
   font-size: 1.5rem;
   top: 25px;
